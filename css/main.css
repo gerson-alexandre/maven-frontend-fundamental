@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
+
+body {
+    margin:0;
+    font-family:  Montserrat, sans-serif, Arial;  
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 4em;
+    background-color: #36414c;
+    box-shadow: inset 0 -1px 0 0;
+  
+}
+
+.home-main-heading {
+    text-align: center;
+    background-color: #EAF2F8;
+    width: 100%;
+    height: 90vh;
+
+}
+.home-main-heading h1 {
+    top: 50%;
+}
+
+.btn-find-out-more {
+    width: 350px;
+    height: 60px;
+    border-radius: 30px;
+    padding: 1px 4px 1px 4px;
+    box-shadow: 0 10px 20px 0 rgba(25, 71, 128, 0.2);
+    background-color: #5b9de3;
+}
+
