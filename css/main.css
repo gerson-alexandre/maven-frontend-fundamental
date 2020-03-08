@@ -18,11 +18,12 @@ nav {
     text-align: center;
     background-color: #EAF2F8;
     width: 100%;
-    height: 100vh;
+    height: 115vh;
+    margin-bottom: 80px;
 
 }
 .home-main-heading h1 {
-    top: 50%;
+    padding-top: 50px;
 }
 
 .btn-find-out-more {
@@ -37,6 +38,15 @@ nav {
 
 .why-maven-academy {
     display: flex;
+}
+
+.box-1 {
+/* 
+    width: 745px;
+    height: 517px; */
+    border-radius: 5px;
+    box-shadow: 0 15px 30px 0 rgba(25, 71, 128, 0.2);
+    background-color: #ffffff;
 }
 
 .btn-read-more {
@@ -63,21 +73,47 @@ nav {
     box-shadow: 0 10px 20px 0 rgba(25, 71, 128, 0.2);
     background-color: #5b9de3;
     border-color: #5b9de3;
+    
   }
 
+  .btn-read-more:hover{    
+    background-color: #fff;
+  }
+
+
 .our-courses {
+    margin-top: 80px;
     background-color: #EAF2F8;
     width: 100%;
-    height: 90vh;
+    /* height: 110vh; */
+    height:  808px;
     text-align: center;
 }
-.coruse-display {
+
+.our-courses h1{
+    padding-top: 50px;
+}
+.course-panel {
+    margin: 40px;
     width: 372px;
     height: 489px;
     box-shadow: 0 5px 20px 0 rgba(25, 71, 128, 0.2);
     background-color: #ffffff;
 }
 
+.contact-banner  {
+    text-align: center;
+} 
+.contact-banner img {
+    text-align: center;
+
+}
+.career-services {
+    text-align: left;
+}
+.career-services h1 {
+    padding-top: 80px;
+}
 .students-review {
     background-color: #36414c;;
     width: 100%;
