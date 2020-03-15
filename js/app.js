@@ -16,7 +16,7 @@ Course.prototype.describ =  function() {
 
 }
 
-let course = new Course(name, duration, price), pre_work;
+let course = new Course(name, duration, price, pre_work);
 
 
 
