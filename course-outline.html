@@ -47,13 +47,12 @@
               <p> 12 Weeks Coruse - in Classroom</p>
               <img src="./images/webdeveloper.png" alt="web developer">
               <p>R26,000,00 Excl Vat</p>
-              <a href="">
-                 view course detail
-              </a>
+            
+              <button type="button" class="btn btn-primary btn-lg">Add to Cart</button>
           </div>
         </aside>
         <section class="col-8 bg-">
-            <h2>Course Outline</h2>
+            <h2 class="pt-3 pb-4">Course Outline</h2>
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
               <li class="nav-item">
                 <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Pre-Work</a>
@@ -81,20 +80,32 @@
               <div class="tab-pane fade bg-light p-3" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <h5>Module 1</h5>
                 <p class="pt-3">
+                  Ola pessoal eu estou fazendo mai um teste de programaçao para que eu veja se esta  cena vai funcionar 
+                  de acordo com as minhas expectativas
+                </p>
+              </div>
+              <div class="tab-pane fade bg-light p-3" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <h5>Module 2</h5>
+                <p class="pt-3">
                   Ola pessoal eu estou fazendo mai um teste de programaçao para que vej se ewsta cena vai funcionar 
                   de acordo com as minhas expectativas
                 </p>
               </div>
-              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                Mod 2
+              <div class="tab-pane fade bg-light p-3" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <h5>Module 3</h5>
+                <p class="pt-3">
+                  Ola pessoal eu estou fazendo mai um teste de programaçao para que vej se ewsta cena vai funcionar 
+                  de acordo com as minhas expectativas
+                </p>
               </div>
-              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                Mod 3
+              <div class="tab-pane fade bg-light p-3" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <h5>Module 4</h5>
+                <p class="pt-3">
+                  Ola pessoal eu estou fazendo mai um teste de programaçao para que vej se ewsta cena vai funcionar 
+                  de acordo com as minhas expectativas
+                </p>
               </div>
-              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                Mod 4
-              </div>
-              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+              <div class="tab-pane fade bg-light p-3" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                 Mod 5
               </div>
             </div>
@@ -115,15 +126,11 @@
                 In other to find out more information about the course please download the course curriculum
               </p>
             </div> -->
-          </div>
 
+
+           
         </section>
-
-      
       </div>
-
-
-
      </div>
 
 
@@ -156,7 +163,7 @@
 
           </div>
       </div>
-  </footer>s
+  </footer>
    </main>
 
 
@@ -177,6 +184,10 @@
               $(this).tab('show');
           });
       });
+
+     $('#myModal').on('shown.bs.modal', function () {
+     $('#myInput').trigger('focus')
+     })
 </script>
 
 </body>

@@ -70,22 +70,7 @@ nav ul li a {
    
 }
 
-.btn-read-more {
-    /* width: 144px;
-    height: 18px;
-    font-family: Titillium;
-    font-size: 12px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    text-align: center;
-    color: #5b9de3;
-    border-radius: 18px;
-    border-color: #5b9de3;
-    padding: 4px 4px 4px 4px; */
-    
+.btn-read-more {   
     font-size: 12px;
     width: 144px;
     height: 25px;
@@ -95,6 +80,29 @@ nav ul li a {
     background-color: #5b9de3;
     /* border-color: #5b9de3; */
     color: #fff;
+    
+  }
+  .btn-add-to-cart {
+    padding: 0px 4px 0px 4px;
+    font-size: 12px;
+    border-radius: 30px;
+  }
+  .btn-circular-md {
+      padding-left: 40px;
+      padding-right: 40px;
+      border-radius: 15px;
+      background-color: #fff;
+      border-color: #5b9de3;
+      color: #5b9de3;
+  }
+  .btn-circular-md:hover {
+    background-color: #5b9de3;
+    color: #fff;
+  }
+
+  .input-circular {
+    border-radius: 15px;
+    border-color: seashell;
     
   }
 
@@ -185,4 +193,5 @@ footer h6{
     background-color: #5b9de3;
     border-radius: 15px;
 }
+
 
