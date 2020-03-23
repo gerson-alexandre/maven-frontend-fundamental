@@ -81,24 +81,27 @@ nav ul li a {
     /* border-color: #5b9de3; */
     color: #fff;
     
-  }
-  .btn-add-to-cart {
+}
+
+.btn-add-to-cart {
     padding: 0px 4px 0px 4px;
     font-size: 12px;
     border-radius: 30px;
-  }
-  .btn-circular-md {
-      padding-left: 40px;
-      padding-right: 40px;
-      border-radius: 15px;
-      background-color: #fff;
-      border-color: #5b9de3;
-      color: #5b9de3;
-  }
-  .btn-circular-md:hover {
+}
+
+.btn-circular-md {
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 15px;
+    background-color: #fff;
+    border-color: #5b9de3;
+    color: #5b9de3;
+}
+
+.btn-circular-md:hover {
     background-color: #5b9de3;
     color: #fff;
-  }
+}
 
   .input-circular {
     border-radius: 15px;
@@ -134,10 +137,12 @@ nav ul li a {
 .contact-banner  {
     text-align: center;
 } 
+
 .contact-banner img {
     text-align: center;
 
 }
+
 .career-services {
     text-align: left;
 }
@@ -145,7 +150,6 @@ nav ul li a {
 .career-services h1 {
     padding-top: 80px;
 }
-
 
 .students-review {
     background-color: #36414c;;
@@ -182,7 +186,6 @@ footer {
     background-color: #141e29;    
 }
 
-
 footer h6{
     color: #4a90e2;
 }
@@ -193,5 +196,20 @@ footer h6{
     background-color: #5b9de3;
     border-radius: 15px;
 }
+/* typewriter style */
+span {
+    border-right: .05em solid;
+    animation: caret 1s steps(1) infinite;
+    /* background-color: springgreen; */
+    }
 
+    @keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+}
+/* typewriter */
 
+.text-size {
+    font-size: 3rem;
+}

@@ -1,26 +1,5 @@
 
-
-//
-var name, duration, price, pre_work;
-
-function Course(name, duration, price, pre_work) {
-    this.name =name;
-    this.duration =duration;
-    this.price = price;
-    this.pre_work = pre_work
-}
-
-
-Course.prototype.describ =  function() {
-
-
-}
-
-let course = new Course(name, duration, price, pre_work);
-
-
-
-//creating a typewriter
+//Creating  a typewriter
 var TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
@@ -54,7 +33,7 @@ TxtType.prototype.tick = function() {
     } else if (this.isDeleting && this.txt === '') {
     this.isDeleting = false;
     this.loopNum++;
-    delta = 500;
+    delta = 350;
     }
 
     setTimeout(function() {
@@ -74,9 +53,40 @@ window.onload = function() {
     // INJECT CSS
     var css = document.createElement("style");
     css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.1em solid #5b9de3;  animation: caret 1s steps(1) infinite;} ";
     document.body.appendChild(css);
 };
+//========================================================================================================================
+//End of type writer
+
+
+
+
+
+
+
+
+
+// //
+// var name, duration, price, pre_work;
+
+// function Course(name, duration, price, pre_work) {
+//     this.name =name;
+//     this.duration =duration;
+//     this.price = price;
+//     this.pre_work = pre_work
+// }
+
+
+// Course.prototype.describ =  function() {
+
+
+// }
+
+// let course = new Course(name, duration, price, pre_work);
+
+
+
 
 
 
