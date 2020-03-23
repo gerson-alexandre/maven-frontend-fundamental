@@ -53,7 +53,7 @@ window.onload = function() {
     // INJECT CSS
     var css = document.createElement("style");
     css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 0.1em solid #5b9de3;  animation: caret 1s steps(1) infinite;} ";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.1em solid #4a90e2;  animation: caret 1s steps(1) infinite;} ";
     document.body.appendChild(css);
 };
 //========================================================================================================================
