@@ -127,3 +127,8 @@
         visibility: visible;
     } 
 }
+
+
+.f-semibold {
+    font-weight: 600;
+}

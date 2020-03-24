@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/carousel.css">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
           crossorigin="anonymous">
@@ -15,33 +16,44 @@
 <body>
     <div class="main-heading">
         <header>
-            <nav class="navbar navbar-light bg-nav">
-                <a class="navbar-brand" href="#">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-nav">
+                <a class="navbar-brand pl-5" href="/">
                     <img src="./images/maven_academy.png" width="113" height="44" alt="">
                 </a>
-                <ul class="nav justify-content-end">
-                    <li class="nav-item">
-                      <a class="nav-link active" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/course-outline.html">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/cart.html">Cart</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href=""><img src="./images/whitecart.png" width="40" height="40" alt="cart"></a>
-                    </li>
-                  
-                  </ul>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <!-- <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul> -->
+                  <ul class="navbar-nav ml-auto justify-content-center pt-3 ">
+                        <li class="nav-item ">
+                            <a class="nav-link active mr-3" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mr-3 nav-style" href="/course-outline.html">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  mr-3" href="#">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mr-3 "href="/cart.html">Cart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mr-3 " href=""><img src="./images/whitecart.png" width="40" height="40" alt="cart"></a>
+                        </li>
+                 </ul>
+                  <!-- <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form> -->
+                </div>
             </nav>
            <div class="home-main-heading">
                <div>
-                    <h1 class="text-size">Next level training in</h1>
-                    <div class="text-size font-weight-bold">
+                    <h1 class="text-size font-weight-normal">Next level training in</h1>
+                    <div class="text-size f-semibold">
                         <a href="" class="typewrite" data-period="2000" data-type='[ "Web developmenet ", "User experience design ", "User interface design ", "Mobile development ", "Software development " ]'>
                           <span class="wrap"></span>
                         </a>
@@ -51,9 +63,7 @@
                 <P>
                     Take your tech career to the next level with our immersive software development programmes
                 </P>
-                
                 <button class="btn-find-out-more">FIND OUT MORE</button>
-            
             </div> 
         </header>
     </div>
@@ -171,10 +181,10 @@
             </div>
         </section>
 
-        <section class="container career-services">
+        <section class="container text-left">
 
-            <h1>Career Services</h1>
-            <p>
+            <h1 class="pt-4 pb-3">Career Services</h1>
+            <p >
                 The Maven Academy is committed to helping you secure a new job after finishing your bootcamp.
                 With your hard-work and our help, we’re confident that you can get hired by a fantastic company.
             </p>
@@ -266,7 +276,7 @@
 
         </section>
 
-        <section class="contact-banner">
+        <section class="text-center">
         <img src="./images/contact-banner.png" alt="contact banner">
            <H1> Thank you for your enquiry. </H1>
            <P class="pt-4"> One of our friendly course consultants and we’ll get back to you within 24 hours. </P>
