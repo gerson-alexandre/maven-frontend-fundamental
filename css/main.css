@@ -71,7 +71,7 @@ nav .navbar-nav li a:hover{
 
 .box-2 {
     margin-left:80px;
-    margin-right:80px;
+    margin-right:30px;
 }
 
 .btn-read-more {   
@@ -79,7 +79,7 @@ nav .navbar-nav li a:hover{
     width: 144px;
     height: 25px;
     border-radius: 30px;
-    padding: 0px 1px 0px 0px;
+    padding: 2px 1px 2px 1px;
     box-shadow: 0 10px 20px 0 rgba(25, 71, 128, 0.2);
     background-color: #5b9de3;
     /* border-color: #5b9de3; */
@@ -179,14 +179,15 @@ footer h6{
     width: 75px;
     height: 75px;
     background-color: #5b9de3;
+    margin-right: 20px;
     border-radius: 15px;
 }
 
 /* typewriter style */
 span {
-    
     border-right: .05em solid;
     animation: caret 1s steps(1) infinite;
+
     /* background-color: springgreen; */
     }
 
@@ -198,4 +199,22 @@ span {
 
 .text-size {
     font-size: 3rem;
+    top: 100px;
+}
+/* implementing media querires */
+@media all and (max-width:400px){
+    
+  
+}
+
+@media (max-width: 767px){
+    .text-size {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 767px){
+    .text-size {
+        font-size: 38px;
+    }
 }
