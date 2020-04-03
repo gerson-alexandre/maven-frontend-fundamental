@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/carousel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+          crossorigin="anonymous">      
+    <title>The Maven Academy</title>
+</head>
+
+<body>
+    <div class="main-heading">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-nav">
+                <a class="navbar-brand pl-5" href="/">
+                    <img src="./images/maven_academy.png" width="113" height="44" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                  <ul class="navbar-nav ml-auto justify-content-center pt- ">
+                        <li class="nav-item ">
+                            <a class="nav-link active mr-3" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mr-3 nav-style" href="/course-outline.html">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  mr-3" href="#">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mr-3"href="/cart.html">Cart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#"><i class="fa fa-shopping-cart fa-lg pt-2 m-1 " id="cart"></i><span class="badge mr-3">3</span></a>
+                        </li>   
+                   </ul>
+                </div>
+            </nav> 
+        </header>
+    </div>
+    <main>
+        <section class="text-center pt-5">
+            <h1> Get in touch with us. </h1>
+            <img src="./images/contact-banner.png" alt="contact banner">
+            <p>get pumped, get skilled</p>
+        </section>
+        <section class="ct-campus-wrap">
+            <div class="container">
+                <div class="row">
+                    <nav id="breadcumb-nav" aria-label="breadcrumb" class="col-12">
+                        <ol class="breadcrumb bg-breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                        </ol>
+                    </nav>
+                    <div class="col-lg-6">
+                        <div class="main-title">
+                            <h2 class="regular">The Maven Academy </h2>
+                        </div>
+                        <div class="main-title-content">
+                            <p class="mb-3"><strong>Address:</strong></p>
+                            <p class="mb-4">Office F01A, Brookside Office Park, 11 Imam Haron Road, <br>Claremont, Western Cape, 7708</p>
+                            <p class="mb-3"><strong>Say hello:</strong></p>
+                            <p class="mb-4"><a href="mailto:hello@themavenacademy.one" class="blk-link">hello@themavenacademy.one</a></p>
+                            <p>Or call us directly on <a href="tel:+27 21 461 68 17" class="num-link"><strong>+27 21 461 68 17 </strong></a></p>
+                            <p>Schedule a call with one of our friendly course consultants and <br>we’ll get back to you within 24 hours.</p>
+                        </div>
+                        <div class="social-media">
+                            <ul>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bg-light-blue inquiry-form mb-5">
+                            <div class="main-title-content mb-5">
+                                <p class="mb-3"><strong>Send us an enquiry </strong></p>
+                                <p>Schedule a call with one of our friendly course consultants and we’ll get back to you within 24 hours. </p>
+                            </div>
+                            <form id="frmcontactus" name="frmcontactus" method="post" class="form-error">
+                                <div class="form-group">
+                                    <input type="text" name="fname" id="fname" class="form-control" placeholder="Your name" data-rule-required="true" data-msg-required="Please enter Your name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="surname" id="surname" class="form-control" placeholder="Your surname" data-rule-required="true" data-msg-required="Please enter Your surname">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Your email address" data-rule-required="true" data-rule-email="true" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" autocapitalize="none" autocomplete="off">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="cnumber" id="cnumber" class="form-control" placeholder="Your contact number" data-rule-required="true" data-rule-number="true" data-msg-required="Please enter Your contact number" data-msg-number="Please enter valid contact Number">
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="query" id="query" class="form-control" rows="5" cols="1" placeholder="Your query" data-rule-required="true" data-msg-required="Please enter Your query"></textarea>
+                                </div>
+                                <button type="button" class="btn btn-blue small d-block" onclick="javascript: validateContactus();">Send enquiry </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="box study-ct-campus p-5 mt-5">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="media">
+                                <div class="icon-square d-flex justify-content-center bg-blue">
+                                    <img src="images/paper-plane.svg" alt="Paper Plane">
+                                </div>
+                                <div class="media-body align-self-center">
+                                    <p class="mb-0">Join our mailing list to stay up-to-date on upcoming courses and events.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 align-self-center">
+                            <div class="row">
+                                <div class="col-md-8 align-self-center">
+                                    <div class="mb-3 mb-md-0">
+                                        <input type="email" class="form-control" placeholder="Your email" autocapitalize="none" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 align-self-center">
+                                    <div class="join-email-list">
+                                        <button type="submit" class="btn btn-blue-outline small d-block">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+             <!-- creating cart Popup -->
+        <div class="container" >
+            <div class="shopping-cart"id="shop-cart">
+              <div class="shopping-cart-header">
+                <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
+                <div class="shopping-cart-total">
+                  <span class="lighter-text">Total:</span>
+                  <span class="main-color-text">R2,229.97</span>
+                </div>
+              </div> <!--end shopping-cart-header -->
+    
+              <ul class="shopping-cart-items">
+                <li class="clearfix">
+                    
+                    <img src="./images/webdeveloper.png" width="80" height="80"  alt="item1" />
+                    <i class="fa fa-trash float-right"></i>
+                    <span class="item-name">Become a Fullstack Web Developer</span>
+                    <span class="item-price">12 Week- in classroom course</span>
+                    <span class="item-quantity">R48.000.00</span>
+                </li>
+
+                <li class="clearfix">
+                    <img src="./images/webdeveloper.png" width="80" height="80"  alt="item1" />
+                    <span class="item-name">Become a Fullstack Web Developer</span>
+                    <span class="item-price">12 Week- in classroom course</span>
+                    <span class="item-quantity">R48.000.00</span>
+                </li>
+                <li class="clearfix">
+                    <img src="./images/webdeveloper.png" width="80" height="80"  alt="item1" />
+                    <span class="item-name">Become a Fullstack Web Developer</span>
+                    <span class="item-price">12 Week- in classroom course</span>
+                    <span class="item-quantity">R48.000.00</span>
+                </li>
+              </ul>
+                <div class="text-center">
+                    <button class="btn-enquery"id="view-basket">view basket</button>
+                </div>
+            </div> <!--end shopping-cart -->
+          </div> <!--end container -->
+        </section>
+        <footer class="font-size">
+            <!-- Main Footer -->
+            <div class ="footer-content">
+                <div class="container">
+                    <div class="row pt-5 pb-5 pl-5">
+                        <div class="col-md text-left pl-5 ">
+                            <h6>GENERAL</h6>
+                            <p class="pt-1">Home</p>
+                            <p class="">  Faq</p>
+                        </div>
+                        <div class="col-md text-left pl-4 ">
+                            <h6>WHY US</h6>
+                            <p >Why study with us</p>
+                            <p>Financial Aid-Study just for R1</p>
+                            <p>Internship- Work Learn & earn</p>
+                        </div>
+                        <div class="col-md text-left pl-5 ">
+                            <h6>DEVELOPER COURSES</h6>
+                            <p>Full Stack Developer</p>
+                        </div>
+                        <div class="col-md text-left pl-5 ">
+                            <h6>CONTACT US</h6>
+                            <h7>+27 21 461 68 17</h7>
+                            <a href="">hello@mavenacademy.one</a>
+                            <p>Office Brookside offcie Park 11 Road Claremont Western Cape</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer Mask -->
+            <div class="row pt-5">
+                <div class="mask">
+                    <div class="container">
+                        <div class="row pt-5 pb-5 pl-5">
+                            <div class="col-md text-left pt-3 pl-5">
+                                <p>All right reserverd Maven Academy (PTY) Ltd</p>
+                            </div>
+                            <!-- social Media icon to be added -->
+                            <div class="col-md text-right">
+                                <p>Why study with us</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ------------------------------------------ --> 
+        </footer>
+    </main>
+
+    <!-- Bootstrap script -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- end of bootstrap script -->
+    <script src="js/app.js"></script>
+    <!-- Main page carousel for career services section -->
+    <script >
+        $('#carousel-example').on('slide.bs.carousel', function (e) {
+            var $e = $(e.relatedTarget);
+            var idx = $e.index();
+            var itemsPerSlide = 5;
+            var totalItems = $('.carousel-item').length;
+        
+            if (idx >= totalItems-(itemsPerSlide-1)) {
+                var it = itemsPerSlide - (totalItems - idx);
+                for (var i=0; i<it; i++) {
+                    // append slides to end
+                    if (e.direction=="left") {
+                        $('.carousel-item').eq(i).appendTo('.carousel-inner');
+                    }
+                    else {
+                        $('.carousel-item').eq(0).appendTo('.carousel-inner');
+                    }
+                }
+            }
+        });
+    </script>
+    <!-- carousel script -->
+
+</body>
+
+</html>

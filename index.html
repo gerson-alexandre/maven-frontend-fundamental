@@ -5,29 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/carousel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
-          crossorigin="anonymous">
-        
+          crossorigin="anonymous">      
     <title>The Maven Academy</title>
 </head>
 
 <body>
     <div class="main-heading">
         <header>
-
             <nav class="navbar navbar-expand-lg navbar-light bg-nav">
                 <a class="navbar-brand pl-5" href="/">
                     <img src="./images/maven_academy.png" width="113" height="44" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-              
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <!-- <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul> -->
-                  <ul class="navbar-nav ml-auto justify-content-center pt-3 ">
+                    <ul class="navbar-nav ml-auto justify-content-center pt- ">
                         <li class="nav-item ">
                             <a class="nav-link active mr-3" href="/">Home</a>
                         </li>
@@ -38,32 +35,29 @@
                             <a class="nav-link  mr-3" href="#">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mr-3 "href="/cart.html">Cart</a>
+                            <a class="nav-link mr-3"href="/cart.html">Cart</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mr-3 " href=""><img src="./images/whitecart.png" width="40" height="40" alt="cart"></a>
-                        </li>
-                   </ul>
+                            <a href="#"><i class="fa fa-shopping-cart fa-lg pt-2 m-1 " id="cart"></i><span class="badge mr-3">0</span></a>
+                        </li>       
+                    </ul>
                 </div>
             </nav>
            <div class="home-main-heading">
                <div>
                     <h1 class="text-size font-weight-normal">Next level training in</h1>
                     <div class="text-size f-semibold">
-                        <a href="" class="typewrite" data-period="2000" data-type='[ "Web developmenet ", "User experience design ", "User interface design ", "Mobile development ", "Software development " ]'>
-                          <span class="wrap"></span>
+                        <a href="" class="typewrite" data-period="2000" data-type='[ "Web development ", "User experience design ", "User interface design ", "Mobile development ", "Software development " ]'>
+                          <span class="wrap"id="typewriter-wrap"></span>
                         </a>
                     </div>
                </div>
                 <img src="./images/tech-mavens.png" class ="img-fluid mg-responsive"alt="logo"> 
-                <P>
-                    Take your tech career to the next level with our immersive software development programmes
-                </P>
+                <P> Take your tech career to the next level with our immersive software development programmes </P>
                 <button class="btn-find-out-more">FIND OUT MORE</button>
             </div> 
         </header>
     </div>
-
     <main>
         <section class="container-fluid justify-content-center">
             <div class="row">
@@ -126,41 +120,43 @@
                     </p>              
                 </div>
                 <div class="row">
-                    <div class="col-sm course-panel">
-                        <h6 class="pt-4">Become a Full Stack web Developer</h6>
-                        <p> 12 Weeks Coruse - in Classroom</p>
+                    <div class="col-sm course-panel pt-3">
+                        <!-- <h6 class="pt-4" id="title">m</h6> -->
+                        <p id="description"> 12 Weeks Course - in Classroom</p>
                         <img src="./images/webdeveloper.png" alt="web developer">
                         <p>R26,000,00 Excl Vat</p>
-                        <a href="">
-                           view course detail
+                        <a href="/#">
+                           view Course detail
                         </a>
+                        <div>
+                            <button class="btn-enquery">Add to enquery</button>
+                        </div>
                     </div>
-                    <div class="col-sm course-panel ">
-                        <h6 class="pt-4">Become a Front End Developer</h6>
-                        <p> 4 Weeks Coruse - in Classroom</p>
+                    <div class="col-sm course-panel pt-3">
+                        <h6 class="pt-4" id="titlea"></h6>Become a Front End Developer</h6>
+                        <p> 4 Weeks Course - in Classroom</p>
                         <img src="./images/frontend-dev.png" alt="Graduate">
                         <p>R26,000,00 Excl Vat</p>
-                        <a href="">
+                        <a href="/#">
                            view course detail
                         </a>
-                        <div class="row align-center">
-                            <button>Read More</button>
-                        </div>
-                        
+                        <div>
+                            <button class="btn-enquery">Add to enquery</button>
+                        </div>    
                     </div>
                     <div class="col-sm course-panel pt-3">
                       <h6 class="pt-4">Become a Java Spring Boot Developer</h6>
-                      <p> 12 Weeks Coruse - in Classroom</p>
+                      <p> 12 Weeks Course - in Classroom</p>
                       <img src="./images/frontend-dev.png" alt="Graduate">
                       <p>R26,000,00 Excl Vat</p>
-                      <a href="">
-                         view course detail
-                      </a>
+                      <a href="/#"> view course detail</a>
+                        <div>
+                            <button class="btn-enquery">Add to enquery</button>
+                        </div>
                     </div>
                   </div>
             </div>
         </section>
-
         <section class="container text-left">
             <h1 class="pt-4 pb-3">Career Services</h1>
             <p >
@@ -213,12 +209,11 @@
             <div class=" pt-5 text-white">
                 <!-- <h1> What our students think about our courses </h1>
                 <p></p> -->
-
                <div class="container">
-                <div id="career-services-corousel" class="carousel slide" data-ride="carousel">
-                    <!-- carousel-inner -->
+                <div id="carousel2" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner1 row w-100 mx-auto" role="listbox">
                      <div class="carousel-inner1">  
-                       <div class="carouel-item1">
+                       <div class="carouel-item">
                        <div class="row">
                         <div class="col-5 pt-5">
                             <h2> What our students think about our courses </h2>
@@ -238,31 +233,112 @@
                              <img src="./images/student2.jpg"  class="img-fluid mx-auto " alt="student-image">
                          </div>
                       </div>
-                      
+                      <div class="carousel-item">
+                        <div class="col-5 pt-5">
+                            <h2> What our students think about our courses </h2>
+                            <p class="pt-5">Ola pessoal o Maven Academy é uma optima empresa para começar a carreira como programador e tambem tem uma grande... dhfbdhfbhdhfbfdgdh jfhjddj jhdjf fdhfdhgfehe kehajhfuh bdglhuihgug heuwgafhbc judiguegfeu jugfueig ugu j  jshvd dfgvhfv idhdfg ufyefyge jvbrv kkahvjahvf hfeyfevh f eeg effefv e eyveye beeef ufurelsf ufrevfrhfver aufgue igrugue dsjfbeufa brugewufgu ugfuew ugwfuihv uauyeygfue. The End</p>
+                         </div>
+                         <div class="col-7 text-left pt-5 pl-5">
+                             <img src="./images/student2.jpg"  class="img-fluid mx-auto " alt="student-image">
+                         </div>
+                      </div>
+                      </div> 
                      </div>
-                    <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </a> -->
                   </div> 
                </div>
             </div>
-
         </section>
-
-        <section class="text-center">
+        <section class="text-center pt-5">
         <img src="./images/contact-banner.png" alt="contact banner">
            <H1> Thank you for your enquiry. </H1>
            <P class="pt-4"> One of our friendly course consultants and we’ll get back to you within 24 hours. </P>
            <P class="pt-4"> Or call us directly on +27 (0)87 073 5694</P>
            <P class="pt-4"> Need a quicker answer ? visit out Faq page :  <a href="">Click here </a></P>
         </section>
+        <section>
+             <!-- creating cart Popup -->
+        <div class="container">
+            <div class="shopping-cart"id="shop-cart">
+              <div class="shopping-cart-header">
+                <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
+                <div class="shopping-cart-total">
+                  <span class="lighter-text">Total:</span>
+                  <span class="main-color-text">R2,229.97</span>
+                </div>
+              </div> <!--end shopping-cart-header -->
+    
+              <ul class="shopping-cart-items">
+                <li class="clearfix">
+                    
+                    <img src="./images/webdeveloper.png" width="80" height="80"  alt="item1" />
+                    <i class="fa fa-trash float-right"></i>
+                    <span class="item-name">Become a Fullstack Web Developer</span>
+                    <span class="item-price">12 Week- in classroom course</span>
+                    <span class="item-quantity">R48.000.00</span>
+                </li>
 
-        <footer>
+                <li class="clearfix">
+                    <img src="./images/webdeveloper.png" width="80" height="80"  alt="item1" />
+                    <span class="item-name">Become a Fullstack Web Developer</span>
+                    <span class="item-price">12 Week- in classroom course</span>
+                    <span class="item-quantity">R48.000.00</span>
+                </li>
+                <li class="clearfix">
+                    <img src="./images/webdeveloper.png" width="80" height="80"  alt="item1" />
+                    <span class="item-name">Become a Fullstack Web Developer</span>
+                    <span class="item-price">12 Week- in classroom course</span>
+                    <span class="item-quantity">R48.000.00</span>
+                </li>
+              </ul>
+                <div class="text-center">
+                    <button class="btn-enquery"id="view-basket">view basket</button>
+                </div>
+            </div> <!--end shopping-cart -->
+          </div> <!--end container -->
+        </section>
+        <section>
+            <div class="container">
+              <div class="row">
+                <h2 class="pt-5 pb-5">Cart</h2>
+              </div>
+                <div class="row">
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody id="table-item">
+                      <tr >
+                        <th scope="row"></th>
+                        <td class="align-middle">
+                           Title  <br/>Description
+                        </td>
+                        <td class="align-middle">price</td>
+                        <td class="align-middle">Quantity</td>
+                        <td class="align-middle">Total </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="row  float-right">
+                  <div class="cart-total  pr-5">
+                    <h5>Cart Total </h5>
+                    <p>Subtoal</p>
+                    <p>Vat</p>
+                    <p>Total</p>
+                    <div class="row">
+                      <button class="text-primary">Enquery</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </section>
+        <footer class="font-size">
             <!-- Main Footer -->
             <div class ="footer-content">
                 <div class="container">
@@ -282,7 +358,7 @@
                             <h6>DEVELOPER COURSES</h6>
                             <p>Full Stack Developer</p>
                         </div>
-                        <div class="col-md text-left pl-5">
+                        <div class="col-md text-left pl-5 ">
                             <h6>CONTACT US</h6>
                             <h7>+27 21 461 68 17</h7>
                             <a href="">hello@mavenacademy.one</a>
@@ -305,28 +381,22 @@
                             </div>
                         </div>
                     </div>
-    
                 </div>
             </div>
             <!-- ------------------------------------------ --> 
         </footer>
     </main>
 
+   
     <!-- Bootstrap script -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- end of bootstrap script -->
     <script src="js/app.js"></script>
-
-
-
-
     <!-- Main page carousel for career services section -->
     <script >
-
         $('#carousel-example').on('slide.bs.carousel', function (e) {
-     
             var $e = $(e.relatedTarget);
             var idx = $e.index();
             var itemsPerSlide = 5;
@@ -345,7 +415,10 @@
                 }
             }
         });
+       
     </script>
+    <!-- carousel script -->
+   
 
 </body>
 

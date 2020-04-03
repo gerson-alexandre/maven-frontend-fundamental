@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/carousel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
-          crossorigin="anonymous">
-    <title>cart</title>
+          crossorigin="anonymous">      
+    <title>The Maven Academy</title>
 </head>
 <body>
   <div class="main-heading">
     <header>
-        <nav class="navbar navbar-light bg-nav">
-            <a class="navbar-brand" href="#">
-                <img src="./images/maven_academy.png" width="113" height="44" alt="">
-            </a>
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                  <a class="nav-link active" href="/">Home</a>
+      <nav class="navbar navbar-expand-lg navbar-light bg-nav">
+        <a class="navbar-brand pl-5" href="/">
+            <img src="./images/maven_academy.png" width="113" height="44" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ml-auto justify-content-center pt- ">
+                <li class="nav-item ">
+                    <a class="nav-link active mr-3" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/course-outline.html">Courses</a>
+                    <a class="nav-link mr-3 nav-style" href="/course-outline.html">Courses</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Contact Us</a>
+                    <a class="nav-link  mr-3" href="#">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/cart.html">Cart</a>
+                    <a class="nav-link mr-3"href="/cart.html">Cart</a>
                 </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href=""><img src="./images/whitecart.png" width="40" height="40" alt="cart"></a>
-                </li>
-  
-              </ul>
-        </nav>
+                <li class="nav-item">
+                    <a href="#"><i class="fa fa-shopping-cart fa-lg pt-2 m-1 " id="cart"></i><span class="badge mr-3">0</span></a>
+                </li>       
+            </ul>
+        </div>
+    </nav>
     </header>
   </div>
       <section>
@@ -47,35 +54,22 @@
                 <thead>
                   <tr>
                     <th></th>
-                    <th scope="col-4">Product</th>
+                    <th scope="col">Product</th>
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Total</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr id="table-item">
                     <th scope="row"></th>
-                    <td><div class="icon-box ">
-                      <img src="./images/recent-graduates.svg" class="pl-3 pr-3 pt-3" alt="career changers">
-                  </div></td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
+                    <td class="align-middle">
+                       Title  <br/>Description
+                    </td>
+                    <td class="align-middle">price</td>
+                    <td class="align-middle">Quantity</td>
+                    <td class="align-middle">Total </td>
                   </tr>
-                  <tr>
-                    <th scope="row"></th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row"></th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  
                 </tbody>
               </table>
             </div>
@@ -92,6 +86,47 @@
             </div>
         </div>
       </section>
+      <section>
+        <!-- creating cart Popup -->
+   <div class="container">
+       <div class="shopping-cart"id="shop-cart">
+         <div class="shopping-cart-header">
+           <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
+           <div class="shopping-cart-total">
+             <span class="lighter-text">Total:</span>
+             <span class="main-color-text">R2,229.97</span>
+           </div>
+         </div> <!--end shopping-cart-header -->
+
+         <ul class="shopping-cart-items">
+           <li class="clearfix">
+               
+               <img src="./images/webdeveloper.png" width="80" height="80"  alt="item1" />
+               <i class="fa fa-trash float-right"></i>
+               <span class="item-name">Become a Fullstack Web Developer</span>
+               <span class="item-price">12 Week- in classroom course</span>
+               <span class="item-quantity">R48.000.00</span>
+           </li>
+
+           <li class="clearfix">
+               <img src="./images/webdeveloper.png" width="80" height="80"  alt="item1" />
+               <span class="item-name">Become a Fullstack Web Developer</span>
+               <span class="item-price">12 Week- in classroom course</span>
+               <span class="item-quantity">R48.000.00</span>
+           </li>
+           <li class="clearfix">
+               <img src="./images/webdeveloper.png" width="80" height="80"  alt="item1" />
+               <span class="item-name">Become a Fullstack Web Developer</span>
+               <span class="item-price">12 Week- in classroom course</span>
+               <span class="item-quantity">R48.000.00</span>
+           </li>
+         </ul>
+           <div class="text-center">
+               <button class="btn-enquery"id="view-basket">view basket</button>
+           </div>
+       </div> <!--end shopping-cart -->
+     </div> <!--end container -->
+   </section>
        <!-- Cart modal pop up code start -->
       <div class="bs-example">
         <div id="myModal" class="modal fade" tabindex="-1">
@@ -139,3 +174,8 @@
 
 </body>
 </html>
+
+       <!-- <div class="col">
+      <img src="./images/frontend-dev.png" class="pl-3 pr-3 pt-3"width="80" height="60" alt="career changers">
+      </div> -->
+                     

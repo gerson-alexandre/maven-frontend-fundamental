@@ -1,5 +1,5 @@
 
-//Creating  a typewriter
+//Creating  a typewriter function constructor
 var TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
@@ -11,13 +11,14 @@ var TxtType = function(el, toRotate, period) {
 };
 
 TxtType.prototype.tick = function() {
+    
     var i = this.loopNum % this.toRotate.length;
     var fullTxt = this.toRotate[i];
 
     if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
     } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
 
     this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
@@ -28,26 +29,32 @@ TxtType.prototype.tick = function() {
     if (this.isDeleting) { delta /= 2; }
 
     if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
+        delta = this.period;
+        this.isDeleting = true;
+
     } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 350;
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 350;
     }
 
     setTimeout(function() {
-    that.tick();
+        that.tick();
     }, delta);
 };
 
+
 window.onload = function() {
+    
     var elements = document.getElementsByClassName('typewrite');
+    
     for (var i=0; i<elements.length; i++) {
+        
         var toRotate = elements[i].getAttribute('data-type');
         var period = elements[i].getAttribute('data-period');
+        
         if (toRotate) {
-          new TxtType(elements[i], JSON.parse(toRotate), period);
+            new TxtType(elements[i], JSON.parse(toRotate), period);
         }
     }
     // INJECT CSS
@@ -58,35 +65,4 @@ window.onload = function() {
 };
 //========================================================================================================================
 //End of type writer
-
-
-
-
-
-
-
-
-
-// //
-// var name, duration, price, pre_work;
-
-// function Course(name, duration, price, pre_work) {
-//     this.name =name;
-//     this.duration =duration;
-//     this.price = price;
-//     this.pre_work = pre_work
-// }
-
-
-// Course.prototype.describ =  function() {
-
-
-// }
-
-// let course = new Course(name, duration, price, pre_work);
-
-
-
-
-
-
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

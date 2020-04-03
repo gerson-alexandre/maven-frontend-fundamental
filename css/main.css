@@ -11,14 +11,13 @@ nav {
     height: 4em;
     background-color: #36414c;
     box-shadow: inset 0 -1px 0 0;
-  
 }
 
 .home-main-heading {
     text-align: center;
     background-color: #EAF2F8;
     width: 100%;
-    height: 115vh;
+    height: 125vh;
     margin-bottom: 80px;
 }
 
@@ -53,7 +52,20 @@ nav .navbar-nav li a:hover{
 .btn-find-out-more:hover{    
     background-color: #fff;
     color:#5b9de3;
-  }
+}
+
+.btn-enquery {
+    width: 250px;
+    height: 40px;
+    border-radius: 22.5px;
+    border: solid 2px #60a0e3;
+    margin-top: 20px;
+} 
+
+.btn-enquery:hover {
+    background-color: #fff;
+    color:#5b9de3;
+} 
 
 
 .why-maven-academy {
@@ -77,12 +89,12 @@ nav .navbar-nav li a:hover{
 .btn-read-more {   
     font-size: 12px;
     width: 144px;
-    height: 25px;
+    height: 40px;
     border-radius: 30px;
-    padding: 2px 1px 2px 1px;
-    box-shadow: 0 10px 20px 0 rgba(25, 71, 128, 0.2);
+    /* padding: 2px 1px 2px 1px; */
+    box-shadow: 0 10px 20px 0#5b9de3;
     background-color: #5b9de3;
-    /* border-color: #5b9de3; */
+    border-color: #5b9de3;
     color: #fff;
 }
 
@@ -106,15 +118,15 @@ nav .navbar-nav li a:hover{
     color: #fff;
 }
 
-  .input-circular {
+.input-circular {
     border-radius: 15px;
     border-color: seashell;
-  }
+}
 
-  .btn-read-more:hover{    
+.btn-read-more:hover{    
     background-color: #fff;
     color:#5b9de3;
-  }
+}   
 
 .our-courses {
     margin-top: 80px;
@@ -134,7 +146,12 @@ nav .navbar-nav li a:hover{
     height: 489px;
     box-shadow: 0 5px 20px 0 rgba(25, 71, 128, 0.2);
     background-color: #ffffff;
+    transition: transform 1s;
 }
+
+.course-panel:hover {
+    transform: translate(0px, -8px);
+  }
 
 .students-review {
     background-color: #36414c;;
@@ -182,13 +199,28 @@ footer h6{
     margin-right: 20px;
     border-radius: 15px;
 }
+.bg-light-blue {
+    background-color: rgba(91, 157, 227, 0.08);
+}
+#frmcontactus {
+    margin: 50px;
+}
+#breadcumb-nav{
+background-color: #fff;
+box-shadow: inset 0 opx 0 0;
+margin-bottom: 30px;
 
+
+}
+.bg-breadcrumb {
+    background-color: #fff!important;
+}
 /* typewriter style */
-span {
+#typewriter-wrap {
     border-right: .05em solid;
     animation: caret 1s steps(1) infinite;
-
-    /* background-color: springgreen; */
+    
+    background-color: springgreen;
     }
 
     @keyframes caret {
@@ -200,6 +232,10 @@ span {
 .text-size {
     font-size: 3rem;
     top: 100px;
+}
+
+.f-footer {
+    font-size: 12px !important;
 }
 /* implementing media querires */
 @media all and (max-width:400px){
@@ -218,3 +254,121 @@ span {
         font-size: 38px;
     }
 }
+
+/* styling cart */
+/* /https://codepen.io/drehimself/pen/VvYLmV */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.lighter-text {
+    color: #abb0be;
+}
+
+.main-color-text {
+    color: blue;
+}
+
+.badge {
+    background-color: #6394f8;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.shopping-cart {
+    margin: 20px 0;
+    float: right;
+    background: white;
+    width: 430px;
+    position: relative;
+    border-radius: 3px;
+    padding: 20px;
+    position: absolute;
+    display: none;
+    box-shadow: 0 15px 30px 0 rgba(25, 71, 128, 0.2);
+    top: 50px;
+    right: 5px;
+    z-index: 3;
+}
+  
+.shopping-cart .shopping-cart-header{
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 15px;
+}
+
+.shopping-cart .shopping-cart-header .shopping-cart-total {
+    float: right;
+}
+  
+.shopping-cart-items {
+    padding-top: 20px;
+    list-style-type: none;
+}
+
+.shopping-cart-items li {
+    margin-bottom: 18px;
+}
+
+.shopping-cart img {
+    float: left;
+    margin-right: 12px;
+}
+
+.shopping-cart  .item-name {
+    display: block;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+.shopping-cart .item-price {
+    color: blue;
+    margin-right: 8px;
+}
+
+.shopping-cart  .item-quantity {
+    color: green;
+}
+
+.shopping-cart:after {
+    bottom: 100%;
+    left: 89%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: white;
+    border-width: 8px;
+    margin-left: -8px;
+}
+
+.cart-icon {
+    color: #515783;
+    font-size: 24px;
+    margin-right: 7px;
+    float: left;
+}
+
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#shop-cart{
+  font-display: none;
+}
+
+/* end of cart style */
+  
