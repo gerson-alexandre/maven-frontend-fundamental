@@ -116,15 +116,22 @@ var courseController = (function(){
         addToItemQuantity: function(item){
             //Increment the item/ course quantity by one
             data.allItem.shoppingCart[item].quantity += 1;
+            
+            var cartData  = JSON.stringify(data.allItem.shoppingCart);
+            localStorage.setItem('cartData',cartData);
         },
 
         addToCart: function(id, title, description, price, img, inCart){
 
-            var newItem;
+            var newItem, cartData;
+
             inCart = parseInt(inCart);
             newItem = new ShoppingCart(id, title, description, price, img, inCart);
             //push the new item to the data struture
-            data.allItem.shoppingCart.push(newItem);   
+            data.allItem.shoppingCart.push(newItem);  
+    
+            cartData  = JSON.stringify(data.allItem.shoppingCart);
+            localStorage.setItem('cartData',cartData);
            
             return newItem;
         },
@@ -221,24 +228,27 @@ var controller = (function (courseCtrl, UICtrl ){
 
        function addItemToCart(){
             
-            var newCArtItem, cartData;
+            var newCArtItem;
             //loop to get the the index of the clicked button
             for(let item = 0; item < btnEnquiry.length; item ++){
                 
                 btnEnquiry[item].addEventListener('click', function(){
                 
-                    var cartTotal = localStorage.getItem('cartItems');
+                    let cartItems = localStorage.getItem('cartItems');
                     let data = courseCtrl.getData();
-                    cartTotal = parseInt(cartTotal);
-                
-                    if(cartTotal) {
 
-                        localStorage.setItem('cartItems', cartTotal + 1);
-                        document.querySelector('.nav-item span').textContent = cartTotal + 1;
+                    cartItems = parseInt(cartItems);
+                
+                    if(cartItems) {
+
+                        localStorage.setItem('cartItems', cartItems + 1);
+                        document.querySelector('.nav-item span').textContent = cartItems + 1;
                         totalCartCost(newCArtItem);
                         //check if the course item has already been added to cart 
                         if(data.allItem.shoppingCart[item]){
+
                             courseCtrl.addToItemQuantity(item);
+                        
                         } else {
                             //add the item  to cart for the first time and set the qantity to be 1
                             newCArtItem = courseCtrl.addToCart(data.allItem.course[item].id, data.allItem.course[item].title, data.allItem.course[item].description, data.allItem.course[item].price, data.allItem.course[item].img,  1 );
@@ -255,9 +265,6 @@ var controller = (function (courseCtrl, UICtrl ){
                         UICtrl.addListItem(newCArtItem);
 
                     }
-
-                    cartData  = JSON.stringify(data.allItem.shoppingCart);
-                    localStorage.setItem('cartData',cartData);
                      
                 });
                
@@ -272,21 +279,22 @@ var controller = (function (courseCtrl, UICtrl ){
         var cartData = localStorage.getItem('cartData');
         cartData = JSON.parse(cartData);
       
+        
         if(cartData){
-
-            console.log(cartData);
-
+            
+            console.log("There is something in the shopping Cart");
+            //loop througth the cart object and display it on the cart page
             for(item =0; item < cartData.length; item ++){
-                console.log("THere is something in the shooping Cart");
              
-                let field = cartData.map(({ title }) => title);
-                console.log(field);
+               // let field = cartData.map(({ title }) => title);
+              //  console.log(field);
             }
+
 
         } else {
 
             console.log("There is nothing in the shopping Cart");
-            
+
         }
     }
 
