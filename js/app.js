@@ -276,18 +276,34 @@ var controller = (function (courseCtrl, UICtrl ){
 
     function onloadPopulateCartList(){
        
-        var cartData = localStorage.getItem('cartData');
+        let html, newHtml, element, cartData;
+        //create an html string with placehode text 
+        element = '#table-item';
+        cartData = localStorage.getItem('cartData');
         cartData = JSON.parse(cartData);
+        console.log(cartData[1].title);
+      
       
         
         if(cartData){
             
             console.log("There is something in the shopping Cart");
             //loop througth the cart object and display it on the cart page
-            for(item =0; item < cartData.length; item ++){
+            for(item = 0; item < cartData.length; item ++){
              
                // let field = cartData.map(({ title }) => title);
-               // console.log(field);
+               // console.log(field);     
+                html  = '<tr id="item_1"><th scope="row"></th><td class="align-middle">%title%  <br/>%description%</td><td class="align-middle">%price%</td><td class="align-middle">%quantity%</td><td class="align-middle">Total </td></tr>'
+                //replace the placeolder text with with the actual data
+                newHtml  = html;
+                newHtml  = newHtml.replace('%id%', cartData[item].id);
+                newHtml  = newHtml.replace('%title%', cartData[item].title);
+                newHtml  = newHtml.replace('%description%', cartData[item].description);
+                newHtml  = newHtml.replace('%quantity%', cartData[item].quantity);
+                newHtml  = newHtml.replace('%price%', cartData[item].price);
+                //insert the html in the UI
+                document.querySelector(element).insertAdjacentHTML("beforeend", newHtml);
+
             }
 
         } else {
@@ -295,6 +311,7 @@ var controller = (function (courseCtrl, UICtrl ){
             console.log("There is nothing in the shopping Cart");
 
         }
+
     }
 
     function OnloadCartItems(){
