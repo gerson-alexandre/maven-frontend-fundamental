@@ -112,7 +112,22 @@ var courseController = (function(){
     data.allItem.course.push(course3);
    
     return {
-      
+        
+        addToItemQuantity: function(item){
+            //Increment the item/ course quantity by one
+            data.allItem.shoppingCart[item].quantity += 1;
+        },
+
+        addToCart: function(id, title, description, price, img, inCart){
+
+            var newItem;
+            inCart = parseInt(inCart);
+            newItem = new ShoppingCart(id, title, description, price, img, inCart);
+            //push the new item to the data struture
+            data.allItem.shoppingCart.push(newItem);   
+           
+            return newItem;
+        },
         //tesing function to log data in the console
         testing: function(){
             console.log(data);
@@ -129,12 +144,33 @@ var courseController = (function(){
 //*********************************************************************************************************************
 //UI Module
 var UIController = (function(){
-    //Store all the DOM strings 
+
     let DOMString = {
-      
+        tableItem: '#table-item'
     }
 
     return {
+        
+        //testing insert adjacent html
+        addListItem: function(obj){
+            let html, newHtml, element;
+            //create an html string with placehode text 
+            element = DOMString.tableItem;
+            html  = '<tr id="item_1"><th scope="row"></th><td class="align-middle">%title%  <br/>%description%</td><td class="align-middle">%price%</td><td class="align-middle">%quantity%</td><td class="align-middle">Total </td></tr>'
+            //replace the placeolder text with with the actual data
+            newHtml  = html.replace('%title%', obj.title);
+            newHtml  = newHtml.replace('%description%', obj.description);
+            newHtml  = newHtml.replace('%price%', obj.price);
+            newHtml  = newHtml.replace('%quantity%', obj.quantity);
+           
+            //insert the html in the UI
+            document.querySelector(element).insertAdjacentHTML("beforeend", newHtml);
+        },
+
+        getCartInput: function(){
+            return{
+            }
+        },
 
         getDOMString: function(){
             return DOMString;
@@ -143,35 +179,132 @@ var UIController = (function(){
 
 })();
 
-
-
 //********************************************************************************************************************
 //Global App Controller
 var controller = (function (courseCtrl, UICtrl ){
-  
+
+    let btnEnquiry = document.querySelectorAll('.btn-enquery');
     var cart = document.getElementById('cart');
     let shoopingCart = document.getElementById('shop-cart');
-
     
     var setupEventListener = function(){
- 
+       
+       
         //show  shopping cart on mousehover
         cart.addEventListener('mouseover', function(event){
             event.preventDefault();
             
             if(shoopingCart.style.display === 'none'){
+               
                 shoopingCart.style.display ='block';
+           
             } else {
+               
                 shoopingCart.style.display ='none';
-            }          
+           
+            }
+          
         });
 
+        //Calcualate the total Cost of the items in the cart                     
+        function totalCartCost(cartItem){
+            
+            let totalCost = localStorage.getItem('totalCost');
+        
+            if(totalCost != null){
+                totalCost =  parseInt(totalCost);
+          
+            }else {
+              
+            }
+        };
+
+       function addItemToCart(){
+            
+            var newCArtItem, cartData;
+            //loop to get the the index of the clicked button
+            for(let item = 0; item < btnEnquiry.length; item ++){
+                
+                btnEnquiry[item].addEventListener('click', function(){
+                
+                    var cartTotal = localStorage.getItem('cartItems');
+                    let data = courseCtrl.getData();
+                    cartTotal = parseInt(cartTotal);
+                
+                    if(cartTotal) {
+
+                        localStorage.setItem('cartItems', cartTotal + 1);
+                        document.querySelector('.nav-item span').textContent = cartTotal + 1;
+                        totalCartCost(newCArtItem);
+                        //check if the course item has already been added to cart 
+                        if(data.allItem.shoppingCart[item]){
+                            courseCtrl.addToItemQuantity(item);
+                        } else {
+                            //add the item  to cart for the first time and set the qantity to be 1
+                            newCArtItem = courseCtrl.addToCart(data.allItem.course[item].id, data.allItem.course[item].title, data.allItem.course[item].description, data.allItem.course[item].price, data.allItem.course[item].img,  1 );
+                            totalCartCost(newCArtItem);
+                            UICtrl.addListItem(newCArtItem);
+                        }
+
+                    } else {        
+
+                        localStorage.setItem('cartItems', 1 );
+                        document.querySelector('.nav-item span').textContent = 1;
+                        newCArtItem = courseCtrl.addToCart(data.allItem.course[item].id, data.allItem.course[item].title, data.allItem.course[item].description, data.allItem.course[item].price, data.allItem.course[item].img,  1 );
+                        totalCartCost(newCArtItem);
+                        UICtrl.addListItem(newCArtItem);
+
+                    }
+
+                    cartData  = JSON.stringify(data.allItem.shoppingCart);
+                    localStorage.setItem('cartData',cartData);
+                     
+                });
+               
+            }
+       };
+
+       addItemToCart();
+    }
+
+    function onloadPopulateCartList(){
+       
+        var cartData = localStorage.getItem('cartData');
+        cartData = JSON.parse(cartData);
+      
+        if(cartData){
+
+            console.log(cartData);
+
+            for(item =0; item < cartData.length; item ++){
+                console.log("THere is something in the shooping Cart");
+             
+                let field = cartData.map(({ title }) => title);
+                console.log(field);
+            }
+
+        } else {
+
+            console.log("There is nothing in the shopping Cart");
+            
+        }
+    }
+
+    function OnloadCartItems(){
+
+        var cartTotal = localStorage.getItem('cartItems');
+        
+        if(cartTotal){
+            document.querySelector('.nav-item span').textContent = cartTotal;
+        }
     }
 
     return {
         init: function(){
             console.log("Application has started");
             setupEventListener();
+            OnloadCartItems();
+            onloadPopulateCartList();
         }
     }
 
