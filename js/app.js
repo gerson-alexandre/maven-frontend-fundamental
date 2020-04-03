@@ -253,7 +253,7 @@ var controller = (function (courseCtrl, UICtrl ){
                             //add the item  to cart for the first time and set the qantity to be 1
                             newCArtItem = courseCtrl.addToCart(data.allItem.course[item].id, data.allItem.course[item].title, data.allItem.course[item].description, data.allItem.course[item].price, data.allItem.course[item].img,  1 );
                             totalCartCost(newCArtItem);
-                            UICtrl.addListItem(newCArtItem);
+                            //UICtrl.addListItem(newCArtItem);
                         }
 
                     } else {        
@@ -262,7 +262,7 @@ var controller = (function (courseCtrl, UICtrl ){
                         document.querySelector('.nav-item span').textContent = 1;
                         newCArtItem = courseCtrl.addToCart(data.allItem.course[item].id, data.allItem.course[item].title, data.allItem.course[item].description, data.allItem.course[item].price, data.allItem.course[item].img,  1 );
                         totalCartCost(newCArtItem);
-                        UICtrl.addListItem(newCArtItem);
+                        //UICtrl.addListItem(newCArtItem);
 
                     }
                      
@@ -276,14 +276,12 @@ var controller = (function (courseCtrl, UICtrl ){
 
     function onloadPopulateCartList(){
        
-        let html, newHtml, element, cartData;
+        let html, newHtml, cartList, cartData, msg;
         //create an html string with placehode text 
-        element = '#table-item';
+        cartList = '#table-item';
+        msg = "#no-data-msg"
         cartData = localStorage.getItem('cartData');
         cartData = JSON.parse(cartData);
-        console.log(cartData[1].title);
-      
-      
         
         if(cartData){
             
@@ -302,13 +300,16 @@ var controller = (function (courseCtrl, UICtrl ){
                 newHtml  = newHtml.replace('%quantity%', cartData[item].quantity);
                 newHtml  = newHtml.replace('%price%', cartData[item].price);
                 //insert the html in the UI
-                document.querySelector(element).insertAdjacentHTML("beforeend", newHtml);
+                document.querySelector(cartList).insertAdjacentHTML("beforeend", newHtml);
 
             }
 
         } else {
 
-            console.log("There is nothing in the shopping Cart");
+            html =  '<div class="text-center"><h4>You have not added anything to Cart</h4></div>'
+            //console.log("There is nothing in the shopping Cart");
+            document.querySelector(msg).insertAdjacentHTML("beforeend", html);
+           
 
         }
 
