@@ -287,9 +287,8 @@ var controller = (function (courseCtrl, UICtrl ){
             for(item =0; item < cartData.length; item ++){
              
                // let field = cartData.map(({ title }) => title);
-              //  console.log(field);
+               // console.log(field);
             }
-
 
         } else {
 
