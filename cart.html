@@ -1,67 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/carousel.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
-          crossorigin="anonymous">      
-    <title>The Maven Academy</title>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/carousel.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>The Maven Academy</title>
 </head>
+
 <body>
   <div class="main-heading">
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-nav">
         <a class="navbar-brand pl-5" href="/">
-            <img src="./images/maven_academy.png" width="113" height="44" alt="">
+          <img src="./images/maven_academy.png" width="113" height="44" alt="">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav ml-auto justify-content-center pt- ">
-                <li class="nav-item ">
-                    <a class="nav-link active mr-3" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mr-3 nav-style" href="/course-outline.html">Courses</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link  mr-3" href="#">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mr-3"href="/cart.html">Cart</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#"><i class="fa fa-shopping-cart fa-lg pt-2 m-1 " id="cart"></i><span class="badge mr-3">0</span></a>
-                </li>       
-            </ul>
+          <ul class="navbar-nav ml-auto justify-content-center pt- ">
+            <li class="nav-item ">
+              <a class="nav-link active mr-3" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mr-3 nav-style" href="/course-outline.html">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  mr-3" href="#">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mr-3" href="/cart.html">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a href="#"><i class="fa fa-shopping-cart fa-lg pt-2 m-1 " id="cart"></i><span  class="badge mr-3">0</span></a>
+            </li>
+          </ul>
         </div>
-    </nav>
+      </nav>
     </header>
   </div>
-      <section>
-        <div class="container pb-5">
-          <div class="row">
-            <h2 class="pt-5 pb-5">Cart</h2>
-          </div>
-          <div class="row">
-            <table class="table table-borderless">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th scope="col">Product</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Total</th>
-                </tr>
-              </thead>
-              <tbody id="table-item">
-                <!-- <tr>
+  <section>
+    <div class="container pb-5">
+      <div class="row">
+        <h2 class="pt-5 pb-5">Cart</h2>
+      </div>
+      <div class="row">
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th></th>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody id="table-item">
+            <!-- <tr>
                   <th scope="row"></th>
                   <td class="align-middle">
                       Title  <br/>Description
@@ -70,183 +72,193 @@
                   <td class="align-middle">Quantity</td>
                   <td class="align-middle">Total </td>
                 </tr>-->
-              </tbody>
-            </table>
+          </tbody>
+        </table>
+      </div>
+      <div class="row  float-right">
+        <div class="cart-total  pr-5">
+          <h5>Cart Total </h5>
+          <p>Subtoal</p>
+          <p>Vat</p>
+          <p>Total</p>
+          <div class="row">
+            <button class="text-primary">Enquery</button>
           </div>
-          <div class="row  float-right">
-            <div class="cart-total  pr-5">
-              <h5>Cart Total </h5>
-              <p>Subtoal</p>
-              <p>Vat</p>
-              <p>Total</p>
-              <div class="row">
-                <button class="text-primary">Enquery</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="text-center pt-3" id="no-data-msg">
+    <!-- <div class="text-center">
+          <h4>You have not added anything to Cart</h4>
+        </div> -->
+  </section>
+  <section>
+    <!-- creating cart Popup -->
+    <div class="container">
+      <div class="shopping-cart" id="shop-cart">
+        <div class="shopping-cart-header">
+          <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
+          <div class="shopping-cart-total">
+            <span class="lighter-text">Total:</span>
+            <span class="main-color-text">R2,229.97</span>
+          </div>
+        </div>
+        <!--end shopping-cart-header -->
+        <ul class="shopping-cart-items">
+          <li class="clearfix">
+            <img src="./images/webdeveloper.png" width="80" height="80" alt="item1" />
+            <i class="fa fa-trash float-right"></i>
+            <span class="item-name">Become a Fullstack Web Developer</span>
+            <span class="item-price">12 Week- in classroom course</span>
+            <span class="item-quantity">R48.000.00</span>
+          </li>
+          <li class="clearfix">
+            <img src="./images/webdeveloper.png" width="80" height="80" alt="item1" />
+            <span class="item-name">Become a Fullstack Web Developer</span>
+            <span class="item-price">12 Week- in classroom course</span>
+            <span class="item-quantity">R48.000.00</span>
+          </li>
+          <li class="clearfix">
+            <img src="./images/webdeveloper.png" width="80" height="80" alt="item1" />
+            <span class="item-name">Become a Fullstack Web Developer</span>
+            <span class="item-price">12 Week- in classroom course</span>
+            <span class="item-quantity">R48.000.00</span>
+          </li>
+        </ul>
+        <div class="text-center">
+          <button class="btn-enquery" id="view-basket">view basket</button>
+        </div>
+      </div>
+      <!--end shopping-cart -->
+    </div>
+    <!--end container -->
+  </section>
+  <!-- Cart modal pop up code start -->
+  <div class="bs-example">
+    <div id="myModal" class="modal fade" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-ku">
+        <div class="modal-content">
+          <div class="modal-body ">
+            <div class="pb-3">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="row">
+              <div class="col d-flex">
+                <div class="icon-box ">
+                  <img src="./images/recent-graduates.svg" class="pl-3 pr-3 pt-3" alt="career changers">
+                </div>
+                <p class="pl-3">
+                  Download the full syllabus by entereing your email address below. We will send you a link
+                  via email to downalod the brouchure.
+                </p>
+              </div>
+            </div>
+            <div class="container text-center">
+              <div class="pr-5  pb-3">
+                <input class="input-circular mr-4 pl-1 " type="email" name="" id="">
+                <button class="btn-circular-md ">submit</button>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <section class="text-center pt-3"id="no-data-msg">
-        <!-- <div class="text-center">
-          <h4>You have not added anything to Cart</h4>
-        </div> -->
-      </section>
-      <section>
-        <!-- creating cart Popup -->
-          <div class="container">
-              <div class="shopping-cart"id="shop-cart">
-                <div class="shopping-cart-header">
-                  <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
-                  <div class="shopping-cart-total">
-                    <span class="lighter-text">Total:</span>
-                    <span class="main-color-text">R2,229.97</span>
-                  </div>
-                </div> <!--end shopping-cart-header -->
-                <ul class="shopping-cart-items">
-                  <li class="clearfix">
-                      <img src="./images/webdeveloper.png" width="80" height="80"  alt="item1" />
-                      <i class="fa fa-trash float-right"></i>
-                      <span class="item-name">Become a Fullstack Web Developer</span>
-                      <span class="item-price">12 Week- in classroom course</span>
-                      <span class="item-quantity">R48.000.00</span>
-                  </li>
-                  <li class="clearfix">
-                      <img src="./images/webdeveloper.png" width="80" height="80"  alt="item1" />
-                      <span class="item-name">Become a Fullstack Web Developer</span>
-                      <span class="item-price">12 Week- in classroom course</span>
-                      <span class="item-quantity">R48.000.00</span>
-                  </li>
-                  <li class="clearfix">
-                      <img src="./images/webdeveloper.png" width="80" height="80"  alt="item1" />
-                      <span class="item-name">Become a Fullstack Web Developer</span>
-                      <span class="item-price">12 Week- in classroom course</span>
-                      <span class="item-quantity">R48.000.00</span>
-                  </li>
-                </ul>
-                <div class="text-center">
-                    <button class="btn-enquery"id="view-basket">view basket</button>
-                </div>
-              </div> <!--end shopping-cart -->
-            </div> <!--end container -->
-      </section>
-       <!-- Cart modal pop up code start -->
-      <div class="bs-example">
-        <div id="myModal" class="modal fade" tabindex="-1">
-            <div class="modal-dialog modal-lg modal-ku">
-                <div class="modal-content">
-                    <div class="modal-body ">
-                        <div class="pb-3">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="row">
-                            <div class="col d-flex">
-                                <div class="icon-box ">
-                                    <img src="./images/recent-graduates.svg" class="pl-3 pr-3 pt-3" alt="career changers">
-                                </div>
-                                <p class="pl-3">
-                                    Download the full syllabus by entereing your email address below. We will send you a link 
-                                    via email to downalod the brouchure.
-                                </p>
-                            </div>
-                        </div>
-                       <div class="container text-center">
-                          <div class="pr-5  pb-3">
-                            <input class="input-circular mr-4 pl-1 " type="email" name="" id="">
-                            <button class="btn-circular-md ">submit</button>
-                         </div>
-                       </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> 
-    <!-- Cart modal pop up code end -->
+      </div>
+    </div>
+  </div>
+  <!-- Cart modal pop up code end -->
 
-    <!-- fuonter start --> 
-    <footer class="page-footer font-small indigo pt-5">
-      <div class="container text-center text-md-left">
-        <div class="row">
-          <div class="col-md-3 mx-auto">
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-primary">General</h5>
-            <ul class="list-unstyled">
-              <li>
-                <a class="text-white" href="#!">Home</a>
-              </li>
-              <li>
-                <a class="text-white" href="#!">Faq</a>
-              </li>
-            </ul>    
-          </div>
-          <hr class="clearfix w-100 d-md-none">
-          <div class="col-md-3 mx-auto">
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-primary">Why us</h5>
-            <ul class="list-unstyled">
-              <li>
-                <a class="text-white" href="#!">Why study with us</a>
-              </li>
-              <li>
-                <a class="text-white" href="#!">Financial Aid-Study just for R1</a>
-              </li>
-              <li>
-                <a class="text-white" href="#!">Internship- Work Learn & earn</a>
-              </li>
-              <li>
-                <a class="text-white" class="text-white" href="#!">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <hr class="clearfix w-100 d-md-none">
-          <div class="col-md-3 mx-auto">
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-primary">Developer Courses</h5>
-            <ul class="list-unstyled">
-              <li>
-                <a class="text-white" href="#!">Fullstack Developer</a>
-              </li>
-              <li>
-                <a class="text-white" href="#!">Frontend Developer</a>
-              </li>
-            </ul>
-          </div>
-          <hr class="clearfix w-100 d-md-none">
-          <div class="col-md-3  mx-auto">
-            <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-primary">Contact US</h5>
-            <ul class="list-unstyled text-white">
-              <li class="text-white">
-                <a class="text-white"href="#!">+27 21 461 68 1</a>
-              </li>
-              <li>
-                <a class="text-white" href="">hello@mavenacademy.one</a>
-              </li>
-              <li>
-                <a class="text-white" href="#!">Office Brookside offcie Park 11 Road Claremont Western Capen</a>
-              </li>
-            </ul>
-          </div>
+  <!-- fuonter start -->
+  <footer class="page-footer font-small indigo pt-5">
+    <div class="container text-center text-md-left">
+      <div class="row">
+        <div class="col-md-3 mx-auto">
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-primary">General</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a class="text-white" href="#!">Home</a>
+            </li>
+            <li>
+              <a class="text-white" href="#!">Faq</a>
+            </li>
+          </ul>
+        </div>
+        <hr class="clearfix w-100 d-md-none">
+        <div class="col-md-3 mx-auto">
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-primary">Why us</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a class="text-white" href="#!">Why study with us</a>
+            </li>
+            <li>
+              <a class="text-white" href="#!">Financial Aid-Study just for R1</a>
+            </li>
+            <li>
+              <a class="text-white" href="#!">Internship- Work Learn & earn</a>
+            </li>
+            <li>
+              <a class="text-white" class="text-white" href="#!">Link 4</a>
+            </li>
+          </ul>
+        </div>
+        <hr class="clearfix w-100 d-md-none">
+        <div class="col-md-3 mx-auto">
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-primary">Developer Courses</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a class="text-white" href="#!">Fullstack Developer</a>
+            </li>
+            <li>
+              <a class="text-white" href="#!">Frontend Developer</a>
+            </li>
+          </ul>
+        </div>
+        <hr class="clearfix w-100 d-md-none">
+        <div class="col-md-3  mx-auto">
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text-primary">Contact US</h5>
+          <ul class="list-unstyled text-white">
+            <li class="text-white">
+              <a class="text-white" href="#!">+27 21 461 68 1</a>
+            </li>
+            <li>
+              <a class="text-white" href="">hello@mavenacademy.one</a>
+            </li>
+            <li>
+              <a class="text-white" href="#!">Office Brookside offcie Park 11 Road Claremont Western Capen</a>
+            </li>
+          </ul>
         </div>
       </div>
-      <!-- Footer Links -->
-    
-      <!-- Copyright -->
-      <div class="footer-copyright   py-3 float-left ml-5">All right reserverd Maven Academy (PTY) Ltd
-        <a class="float-right mr-5"href="/#"> Why Study with us</a>
-      </div>
-      <!-- Copyright -->
-    
-    </footer>
-    <!-- Footer -->
-    <!-- footer end -->
+    </div>
+    <!-- Footer Links -->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- end of bootstrap script -->
-    <script src="js/app.js"></script>
+    <!-- Copyright -->
+    <div class="footer-copyright   py-3 float-left ml-5">All right reserverd Maven Academy (PTY) Ltd
+      <a class="float-right mr-5" href="/#"> Why Study with us</a>
+    </div>
+    <!-- Copyright -->
 
-    <script>
-       $(document).ready(function(){
-		$("#myModal").modal('show');
-	});
-    </script>
+  </footer>
+  <!-- Footer -->
+  <!-- footer end -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <!-- end of bootstrap script -->
+  <script src="js/app.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $("#myModal").modal('show');
+    });
+  </script>
 
 </body>
+
 </html>

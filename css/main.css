@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
 
 body {
-    margin:0;
+    margin: 0;
     font-family: 'Titillium Web', sans-serif;
 }
 
@@ -21,11 +21,11 @@ nav {
     margin-bottom: 80px;
 }
 
-nav .navbar-nav li a{
+nav .navbar-nav li a {
     color: white !important;
 }
 
-nav .navbar-nav li a:hover{
+nav .navbar-nav li a:hover {
     color: #5b9de3 !important;
     border-bottom: 2px solid #5b9de3;
 }
@@ -49,9 +49,9 @@ nav .navbar-nav li a:hover{
     color: #fff;
 }
 
-.btn-find-out-more:hover{    
+.btn-find-out-more:hover {
     background-color: #fff;
-    color:#5b9de3;
+    color: #5b9de3;
 }
 
 .btn-enquery {
@@ -60,12 +60,12 @@ nav .navbar-nav li a:hover{
     border-radius: 22.5px;
     border: solid 2px #60a0e3;
     margin-top: 20px;
-} 
+}
 
 .btn-enquery:hover {
     background-color: #fff;
-    color:#5b9de3;
-} 
+    color: #5b9de3;
+}
 
 
 .why-maven-academy {
@@ -73,20 +73,20 @@ nav .navbar-nav li a:hover{
 }
 
 .box-1 {
-/*  width: 745px;
+    /*  width: 745px;
     height: 517px; */
     border-radius: 5px;
     box-shadow: 0 15px 30px 0 rgba(25, 71, 128, 0.2);
     background-color: #ffffff;
-  
+
 }
 
 .box-2 {
-    margin-left:80px;
-    margin-right:30px;
+    margin-left: 80px;
+    margin-right: 30px;
 }
 
-.btn-read-more {   
+.btn-read-more {
     font-size: 12px;
     width: 144px;
     height: 40px;
@@ -123,23 +123,24 @@ nav .navbar-nav li a:hover{
     border-color: seashell;
 }
 
-.btn-read-more:hover{    
+.btn-read-more:hover {
     background-color: #fff;
-    color:#5b9de3;
-}   
+    color: #5b9de3;
+}
 
 .our-courses {
     margin-top: 80px;
     background-color: #EAF2F8;
     width: 100%;
     /* height: 110vh; */
-    height:  808px;
+    height: 808px;
     text-align: center;
 }
 
-.our-courses h1{
+.our-courses h1 {
     padding-top: 50px;
 }
+
 .course-panel {
     margin: 40px;
     width: 372px;
@@ -151,10 +152,11 @@ nav .navbar-nav li a:hover{
 
 .course-panel:hover {
     transform: translate(0px, -8px);
-  }
+}
 
 .students-review {
-    background-color: #36414c;;
+    background-color: #36414c;
+    ;
     width: 100%;
     height: 673px;
     text-align: center;
@@ -170,7 +172,7 @@ footer {
     margin-top: 80px;
     width: 100%;
     height: 62vh;
-    background-color:  #36414c;
+    background-color: #36414c;
     text-align: center;
     color: #ffffff;
 }
@@ -178,17 +180,17 @@ footer {
 .mask {
     width: 100%;
     height: 25vh;
-    background-color: #17202A;  
-} 
+    background-color: #17202A;
+}
 
 .footer-mask {
     width: 100%;
     height: 20vh;
     bottom: 0px;
-    background-color: #141e29;    
+    background-color: #141e29;
 }
 
-footer h6{
+footer h6 {
     color: #4a90e2;
 }
 
@@ -199,31 +201,36 @@ footer h6{
     margin-right: 20px;
     border-radius: 15px;
 }
+
 .bg-light-blue {
     background-color: rgba(91, 157, 227, 0.08);
 }
+
 #frmcontactus {
     margin: 50px;
 }
-#breadcumb-nav{
-background-color: #fff;
-box-shadow: inset 0 opx 0 0;
-margin-bottom: 30px;
+
+#breadcumb-nav {
+    background-color: #fff;
+    box-shadow: inset 0 opx 0 0;
+    margin-bottom: 30px;
 
 
 }
+
 .bg-breadcrumb {
-    background-color: #fff!important;
+    background-color: #fff !important;
 }
+
 /* typewriter style */
 #typewriter-wrap {
     border-right: .05em solid;
     animation: caret 1s steps(1) infinite;
-    
-    background-color: springgreen;
-    }
 
-    @keyframes caret {
+    background-color: springgreen;
+}
+
+@keyframes caret {
     50% {
         border-color: transparent;
     }
@@ -237,19 +244,17 @@ margin-bottom: 30px;
 .f-footer {
     font-size: 12px !important;
 }
-/* implementing media querires */
-@media all and (max-width:400px){
-    
-  
-}
 
-@media (max-width: 767px){
+/* implementing media querires */
+@media all and (max-width:400px) {}
+
+@media (max-width: 767px) {
     .text-size {
         font-size: 38px;
     }
 }
 
-@media (max-width: 767px){
+@media (max-width: 767px) {
     .text-size {
         font-size: 38px;
     }
@@ -299,8 +304,8 @@ margin-bottom: 30px;
     right: 5px;
     z-index: 3;
 }
-  
-.shopping-cart .shopping-cart-header{
+
+.shopping-cart .shopping-cart-header {
     border-bottom: 1px solid #e8e8e8;
     padding-bottom: 15px;
 }
@@ -308,7 +313,7 @@ margin-bottom: 30px;
 .shopping-cart .shopping-cart-header .shopping-cart-total {
     float: right;
 }
-  
+
 .shopping-cart-items {
     padding-top: 20px;
     list-style-type: none;
@@ -323,7 +328,7 @@ margin-bottom: 30px;
     margin-right: 12px;
 }
 
-.shopping-cart  .item-name {
+.shopping-cart .item-name {
     display: block;
     padding-top: 10px;
     font-size: 16px;
@@ -334,7 +339,7 @@ margin-bottom: 30px;
     margin-right: 8px;
 }
 
-.shopping-cart  .item-quantity {
+.shopping-cart .item-quantity {
     color: green;
 }
 
@@ -361,14 +366,13 @@ margin-bottom: 30px;
 
 
 .clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
-#shop-cart{
-  font-display: none;
+#shop-cart {
+    font-display: none;
 }
 
 /* end of cart style */
-  

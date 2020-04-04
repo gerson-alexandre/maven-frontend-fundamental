@@ -1,6 +1,5 @@
-
 //Creating  a typewriter function constructor
-var TxtType = function(el, toRotate, period) {
+var TxtType = function (el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
     this.loopNum = 0;
@@ -10,8 +9,8 @@ var TxtType = function(el, toRotate, period) {
     this.isDeleting = false;
 };
 
-TxtType.prototype.tick = function() {
-    
+TxtType.prototype.tick = function () {
+
     var i = this.loopNum % this.toRotate.length;
     var fullTxt = this.toRotate[i];
 
@@ -21,12 +20,14 @@ TxtType.prototype.tick = function() {
         this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
 
-    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
 
     var that = this;
     var delta = 200 - Math.random() * 100;
 
-    if (this.isDeleting) { delta /= 2; }
+    if (this.isDeleting) {
+        delta /= 2;
+    }
 
     if (!this.isDeleting && this.txt === fullTxt) {
         delta = this.period;
@@ -38,21 +39,21 @@ TxtType.prototype.tick = function() {
         delta = 350;
     }
 
-    setTimeout(function() {
+    setTimeout(function () {
         that.tick();
     }, delta);
 };
 
 
-window.onload = function() {
-    
+window.onload = function () {
+
     var elements = document.getElementsByClassName('typewrite');
-    
-    for (var i=0; i<elements.length; i++) {
-        
+
+    for (var i = 0; i < elements.length; i++) {
+
         var toRotate = elements[i].getAttribute('data-type');
         var period = elements[i].getAttribute('data-period');
-        
+
         if (toRotate) {
             new TxtType(elements[i], JSON.parse(toRotate), period);
         }
@@ -67,19 +68,19 @@ window.onload = function() {
 //End of type writer
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //Data Module
-var courseController = (function(){
+var courseController = (function () {
 
     //creating a function constructor
-    let Course = function(id, title, description, price, img){
+    let Course = function (id, title, description, price, img) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.price = price;
         this.img = img;
     };
-    
+
     //creating a function prototype for shopping cart
-    let ShoppingCart = function(id, title, description, price, img, quantity){
+    let ShoppingCart = function (id, title, description, price, img, quantity) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -91,7 +92,7 @@ var courseController = (function(){
     //creating a data structure to put all data
     let data = {
 
-        allItem:{
+        allItem: {
             course: [],
             shoppingCart: []
         },
@@ -100,47 +101,47 @@ var courseController = (function(){
         CartTotalItems: 0,
         priceTotal: 0
     }
-   
+
     //create some initial courses to be displayed on the page
-    var course1 = new Course(1, 'Become a Full Stack web Developer', "12 Weeks Course - in Classroom", 26000,"none");
-    var course2 = new Course(2, 'Become a Front End Developer', '4 Weeks Course - in Classroom', 12000,"none");
-    var course3 = new Course(3, 'Become a Java Spring Boot Developer', "12 Weeks Course - in Classroom", 26000,"none");
+    var course1 = new Course(1, 'Become a Full Stack web Developer', "12 Weeks Course - in Classroom", 26000, "none");
+    var course2 = new Course(2, 'Become a Front End Developer', '4 Weeks Course - in Classroom', 12000, "none");
+    var course3 = new Course(3, 'Become a Java Spring Boot Developer', "12 Weeks Course - in Classroom", 26000, "none");
 
     //Push the initial courses to the course object
     data.allItem.course.push(course1);
     data.allItem.course.push(course2);
     data.allItem.course.push(course3);
-   
+
     return {
-        
-        addToItemQuantity: function(item){
+
+        addToItemQuantity: function (item) {
             //Increment the item/ course quantity by one
             data.allItem.shoppingCart[item].quantity += 1;
-            
-            var cartData  = JSON.stringify(data.allItem.shoppingCart);
-            localStorage.setItem('cartData',cartData);
+
+            var cartData = JSON.stringify(data.allItem.shoppingCart);
+            localStorage.setItem('cartData', cartData);
         },
 
-        addToCart: function(id, title, description, price, img, inCart){
+        addToCart: function (id, title, description, price, img, inCart) {
 
             var newItem, cartData;
 
             inCart = parseInt(inCart);
             newItem = new ShoppingCart(id, title, description, price, img, inCart);
             //push the new item to the data struture
-            data.allItem.shoppingCart.push(newItem);  
-    
-            cartData  = JSON.stringify(data.allItem.shoppingCart);
-            localStorage.setItem('cartData',cartData);
-           
+            data.allItem.shoppingCart.push(newItem);
+
+            cartData = JSON.stringify(data.allItem.shoppingCart);
+            localStorage.setItem('cartData', cartData);
+
             return newItem;
         },
         //tesing function to log data in the console
-        testing: function(){
+        testing: function () {
             console.log(data);
         },
-        
-        getData: function(){
+
+        getData: function () {
             return data;
         }
     }
@@ -150,36 +151,35 @@ var courseController = (function(){
 
 //*********************************************************************************************************************
 //UI Module
-var UIController = (function(){
+var UIController = (function () {
 
     let DOMString = {
         tableItem: '#table-item'
     }
 
     return {
-        
+
         //testing insert adjacent html
-        addListItem: function(obj){
+        addListItem: function (obj) {
             let html, newHtml, element;
             //create an html string with placehode text 
             element = DOMString.tableItem;
-            html  = '<tr id="item_1"><th scope="row"></th><td class="align-middle">%title%  <br/>%description%</td><td class="align-middle">%price%</td><td class="align-middle">%quantity%</td><td class="align-middle">Total </td></tr>'
+            html = '<tr id="item_1"><th scope="row"></th><td class="align-middle">%title%  <br/>%description%</td><td class="align-middle">%price%</td><td class="align-middle">%quantity%</td><td class="align-middle">Total </td></tr>'
             //replace the placeolder text with with the actual data
-            newHtml  = html.replace('%title%', obj.title);
-            newHtml  = newHtml.replace('%description%', obj.description);
-            newHtml  = newHtml.replace('%price%', obj.price);
-            newHtml  = newHtml.replace('%quantity%', obj.quantity);
-           
+            newHtml = html.replace('%title%', obj.title);
+            newHtml = newHtml.replace('%description%', obj.description);
+            newHtml = newHtml.replace('%price%', obj.price);
+            newHtml = newHtml.replace('%quantity%', obj.quantity);
+
             //insert the html in the UI
             document.querySelector(element).insertAdjacentHTML("beforeend", newHtml);
         },
 
-        getCartInput: function(){
-            return{
-            }
+        getCartInput: function () {
+            return {}
         },
 
-        getDOMString: function(){
+        getDOMString: function () {
             return DOMString;
         }
     }
@@ -188,117 +188,117 @@ var UIController = (function(){
 
 //********************************************************************************************************************
 //Global App Controller
-var controller = (function (courseCtrl, UICtrl ){
+var controller = (function (courseCtrl, UICtrl) {
 
     let btnEnquiry = document.querySelectorAll('.btn-enquery');
     var cart = document.getElementById('cart');
     let shoopingCart = document.getElementById('shop-cart');
-    
-    var setupEventListener = function(){
-       
-       
+
+    var setupEventListener = function () {
+
+
         //show  shopping cart on mousehover
-        cart.addEventListener('mouseover', function(event){
+        cart.addEventListener('mouseover', function (event) {
             event.preventDefault();
-            
-            if(shoopingCart.style.display === 'none'){
-               
-                shoopingCart.style.display ='block';
-           
+
+            if (shoopingCart.style.display === 'none') {
+
+                shoopingCart.style.display = 'block';
+
             } else {
-               
-                shoopingCart.style.display ='none';
-           
+
+                shoopingCart.style.display = 'none';
+
             }
-          
+
         });
 
         //Calcualate the total Cost of the items in the cart                     
-        function totalCartCost(cartItem){
-            
+        function totalCartCost(cartItem) {
+
             let totalCost = localStorage.getItem('totalCost');
-        
-            if(totalCost != null){
-                totalCost =  parseInt(totalCost);
-          
-            }else {
-              
+
+            if (totalCost != null) {
+                totalCost = parseInt(totalCost);
+
+            } else {
+
             }
         };
 
-       function addItemToCart(){
-            
+        function addItemToCart() {
+
             var newCArtItem;
             //loop to get the the index of the clicked button
-            for(let item = 0; item < btnEnquiry.length; item ++){
-                
-                btnEnquiry[item].addEventListener('click', function(){
-                
+            for (let item = 0; item < btnEnquiry.length; item++) {
+
+                btnEnquiry[item].addEventListener('click', function () {
+
                     let cartItems = localStorage.getItem('cartItems');
                     let data = courseCtrl.getData();
 
                     cartItems = parseInt(cartItems);
-                
-                    if(cartItems) {
+
+                    if (cartItems) {
 
                         localStorage.setItem('cartItems', cartItems + 1);
                         document.querySelector('.nav-item span').textContent = cartItems + 1;
                         totalCartCost(newCArtItem);
                         //check if the course item has already been added to cart 
-                        if(data.allItem.shoppingCart[item]){
+                        if (data.allItem.shoppingCart[item]) {
 
                             courseCtrl.addToItemQuantity(item);
-                        
+
                         } else {
                             //add the item  to cart for the first time and set the qantity to be 1
-                            newCArtItem = courseCtrl.addToCart(data.allItem.course[item].id, data.allItem.course[item].title, data.allItem.course[item].description, data.allItem.course[item].price, data.allItem.course[item].img,  1 );
+                            newCArtItem = courseCtrl.addToCart(data.allItem.course[item].id, data.allItem.course[item].title, data.allItem.course[item].description, data.allItem.course[item].price, data.allItem.course[item].img, 1);
                             totalCartCost(newCArtItem);
                             //UICtrl.addListItem(newCArtItem);
                         }
 
-                    } else {        
+                    } else {
 
-                        localStorage.setItem('cartItems', 1 );
+                        localStorage.setItem('cartItems', 1);
                         document.querySelector('.nav-item span').textContent = 1;
-                        newCArtItem = courseCtrl.addToCart(data.allItem.course[item].id, data.allItem.course[item].title, data.allItem.course[item].description, data.allItem.course[item].price, data.allItem.course[item].img,  1 );
+                        newCArtItem = courseCtrl.addToCart(data.allItem.course[item].id, data.allItem.course[item].title, data.allItem.course[item].description, data.allItem.course[item].price, data.allItem.course[item].img, 1);
                         totalCartCost(newCArtItem);
                         //UICtrl.addListItem(newCArtItem);
 
                     }
-                     
-                });
-               
-            }
-       };
 
-       addItemToCart();
+                });
+
+            }
+        };
+
+        addItemToCart();
     }
 
-    function onloadPopulateCartList(){
-       
+    function onloadPopulateCartList() {
+
         let html, newHtml, cartList, cartData, msg;
         //create an html string with placehode text 
         cartList = '#table-item';
         msg = "#no-data-msg"
         cartData = localStorage.getItem('cartData');
         cartData = JSON.parse(cartData);
-        
-        if(cartData){
-            
+
+        if (cartData) {
+
             console.log("There is something in the shopping Cart");
             //loop througth the cart object and display it on the cart page
-            for(item = 0; item < cartData.length; item ++){
-             
-               // let field = cartData.map(({ title }) => title);
-               // console.log(field);     
-                html  = '<tr id="item_1"><th scope="row"></th><td class="align-middle">%title%  <br/>%description%</td><td class="align-middle">%price%</td><td class="align-middle">%quantity%</td><td class="align-middle">Total </td></tr>'
+            for (item = 0; item < cartData.length; item++) {
+
+                // let field = cartData.map(({ title }) => title);
+                // console.log(field);     
+                html = '<tr id="item_1"><th scope="row"></th><td class="align-middle">%title%  <br/>%description%</td><td class="align-middle">%price%</td><td class="align-middle">%quantity%</td><td class="align-middle">Total </td></tr>'
                 //replace the placeolder text with with the actual data
-                newHtml  = html;
-                newHtml  = newHtml.replace('%id%', cartData[item].id);
-                newHtml  = newHtml.replace('%title%', cartData[item].title);
-                newHtml  = newHtml.replace('%description%', cartData[item].description);
-                newHtml  = newHtml.replace('%quantity%', cartData[item].quantity);
-                newHtml  = newHtml.replace('%price%', cartData[item].price);
+                newHtml = html;
+                newHtml = newHtml.replace('%id%', cartData[item].id);
+                newHtml = newHtml.replace('%title%', cartData[item].title);
+                newHtml = newHtml.replace('%description%', cartData[item].description);
+                newHtml = newHtml.replace('%quantity%', cartData[item].quantity);
+                newHtml = newHtml.replace('%price%', cartData[item].price);
                 //insert the html in the UI
                 document.querySelector(cartList).insertAdjacentHTML("beforeend", newHtml);
 
@@ -306,26 +306,26 @@ var controller = (function (courseCtrl, UICtrl ){
 
         } else {
 
-            html =  '<div class="text-center"><h4>You have not added anything to Cart</h4></div>'
+            html = '<div class="text-center"><h4>You have not added anything to Cart</h4></div>'
             //console.log("There is nothing in the shopping Cart");
             document.querySelector(msg).insertAdjacentHTML("beforeend", html);
-           
+
 
         }
 
     }
 
-    function OnloadCartItems(){
+    function OnloadCartItems() {
 
         var cartTotal = localStorage.getItem('cartItems');
-        
-        if(cartTotal){
+
+        if (cartTotal) {
             document.querySelector('.nav-item span').textContent = cartTotal;
         }
     }
 
     return {
-        init: function(){
+        init: function () {
             console.log("Application has started");
             setupEventListener();
             OnloadCartItems();
