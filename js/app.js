@@ -202,6 +202,12 @@ var UIController = (function () {
             document.querySelector(element).insertAdjacentHTML("beforeend", newHtml);
         },
 
+        // reomve the deleted item form the UI
+        removeListItem: function(selectorID){
+            var element = document.getElementById(selectorID);
+            element.parentNode.removeChild(element);
+        },
+
         getCartInput: function () {
             return {}
         },
@@ -309,16 +315,14 @@ var controller = (function (courseCtrl, UICtrl) {
         itemID = event.target.parentNode.parentNode.id;
         
         if(itemID){
-            console.log("the id found is ", itemID);
             splitID = itemID.split('-');
             id = parseInt(splitID[3]);
-            console.log("the id found is ", id);
-
+           
             //delete from data structure
             courseCtrl.deleteItemFromCart(id);
             //delete from the UI
-
-            //update the UI
+            UICtrl.removeListItem(itemID);
+            //update the the total Items in the Navbar
         }
         
     };
