@@ -181,7 +181,9 @@ var courseController = (function () {
 var UIController = (function () {
 
     let DOMString = {
-        cartItem: '#table-item'
+        cartItem: '#table-item',
+        cartListItems: '#table-item',
+        msg: "#no-data-msg",
     }
 
     return {
@@ -191,7 +193,7 @@ var UIController = (function () {
             let html, newHtml, element;
             //create an html string with placehode text 
             element = DOMString.cartItem;
-            html = '<tr><th class="align-middle "scope="row "><button class="btn-sm btn-danger fa fa-trash ">  Remove</button></th><td class="align-middle">%title%  <br/>%description%</td><td class="align-middle">%price%</td><td class="align-middle">%quantity%</td><td class="align-middle">Total </td></tr>';
+            html = '<tr id="cart-list-item-%id%"><th class="align-middle "scope="row "><button class="btn-sm btn-danger fa fa-trash ">  Remove</button></th><td class="align-middle">%title%  <br/>%description%</td><td class="align-middle">%price%</td><td class="align-middle">%quantity%</td><td class="align-middle">Total </td></tr>';
             //replace the placeolder text with with the actual data
             newHtml = html.replace('%title%', obj.title);
             newHtml = newHtml.replace('%description%', obj.description);
@@ -296,8 +298,7 @@ var controller = (function (courseCtrl, UICtrl) {
                         document.querySelector('.nav-item span').textContent = 1;
                         newCArtItem = courseCtrl.addToCart(data.allItem.course[item].id, data.allItem.course[item].title, data.allItem.course[item].description, data.allItem.course[item].price, data.allItem.course[item].img, 1);
                         totalCartCost(newCArtItem);
-                        //UICtrl.addListItem(newCArtItem);
-
+                     
                     }
 
                 });
@@ -315,9 +316,9 @@ var controller = (function (courseCtrl, UICtrl) {
         itemID = event.target.parentNode.parentNode.id;
         
         if(itemID){
+
             splitID = itemID.split('-');
             id = parseInt(splitID[3]);
-           
             //delete from data structure
             courseCtrl.deleteItemFromCart(id);
             //delete from the UI
@@ -329,17 +330,14 @@ var controller = (function (courseCtrl, UICtrl) {
 
     function onloadPopulateCartList() {
 
-        let html, newHtml, cartList, cartData, msg;
-        cartList = '#table-item';
-        msg = "#no-data-msg"
+        let html, newHtml, cartData;
+       
         cartData = localStorage.getItem('cartData');
         cartData = JSON.parse(cartData);
 
         if (cartData) {
-
-            console.log("There is something in the shopping Cart");
             //loop througth the cart object and display it on the cart page
-            for (item = 0; item < cartData.length; item++) {
+            for (item = 0; item < cartData.length; item ++) {
 
                 html = '<tr id="cart-list-item-%id%"><th class="align-middle "scope="row "><button class="btn-sm btn-danger fa fa-trash ">  Remove</button></th><td class="align-middle">%title%  <br/>%description%</td><td class="align-middle">%price%</td><td class="align-middle">%quantity%</td><td class="align-middle">Total </td></tr>';
                 //replace the placeolder text with with the actual data
@@ -350,13 +348,13 @@ var controller = (function (courseCtrl, UICtrl) {
                 newHtml = newHtml.replace('%quantity%', cartData[item].quantity);
                 newHtml = newHtml.replace('%price%', cartData[item].price);
                 //insert the html in the UI
-                document.querySelector(cartList).insertAdjacentHTML("beforeend", newHtml);
+                document.querySelector(DOM.cartListItems).insertAdjacentHTML("beforeend", newHtml);
             }
 
         } else {
             //display no data msg
             html = '<div class="text-center"><h4>You have not added anything to Cart</h4></div>'
-            document.querySelector(msg).insertAdjacentHTML("beforeend", html);
+            document.querySelector(DOM.msg).insertAdjacentHTML("beforeend", html);
         }
 
     }
