@@ -164,7 +164,7 @@ var UIController = (function () {
             let html, newHtml, element;
             //create an html string with placehode text 
             element = DOMString.tableItem;
-            html = '<tr id="item_1"><th scope="row"></th><td class="align-middle">%title%  <br/>%description%</td><td class="align-middle">%price%</td><td class="align-middle">%quantity%</td><td class="align-middle">Total </td></tr>'
+            html = '<tr><th class="align-middle "scope="row "><button class="btn-sm btn-danger fa fa-trash ">  Remove</button></th><td class="align-middle">%title%  <br/>%description%</td><td class="align-middle">%price%</td><td class="align-middle">%quantity%</td><td class="align-middle">Total </td></tr>';
             //replace the placeolder text with with the actual data
             newHtml = html.replace('%title%', obj.title);
             newHtml = newHtml.replace('%description%', obj.description);
@@ -291,7 +291,7 @@ var controller = (function (courseCtrl, UICtrl) {
 
                 // let field = cartData.map(({ title }) => title);
                 // console.log(field);     
-                html = '<tr id="item_1"><th scope="row"></th><td class="align-middle">%title%  <br/>%description%</td><td class="align-middle">%price%</td><td class="align-middle">%quantity%</td><td class="align-middle">Total </td></tr>'
+                html = '<tr><th class="align-middle "scope="row "><button class="btn-sm btn-danger fa fa-trash ">  Remove</button></th><td class="align-middle">%title%  <br/>%description%</td><td class="align-middle">%price%</td><td class="align-middle">%quantity%</td><td class="align-middle">Total </td></tr>';
                 //replace the placeolder text with with the actual data
                 newHtml = html;
                 newHtml = newHtml.replace('%id%', cartData[item].id);
