@@ -136,6 +136,33 @@ var courseController = (function () {
 
             return newItem;
         },
+
+        //Delete data from the
+        deleteItemFromCart: function(id){
+
+            let ids, index, cartData;
+            
+            cartData = localStorage.getItem('cartData');
+            cartData = JSON.parse(cartData);
+
+            ids =  cartData.map(function(current){
+                return current.id;
+            });
+           
+            index = ids.indexOf(id);
+       
+            if(index !== -1){
+
+                cartData.splice(index, 1);
+                cartData = JSON.stringify(cartData);
+                localStorage.setItem('cartData', cartData);       
+
+            } else {
+                console.log(" ID of the element to be deleted  not found ");
+            }
+
+        },
+
         //tesing function to log data in the console
         testing: function () {
             console.log(data);
@@ -154,7 +181,7 @@ var courseController = (function () {
 var UIController = (function () {
 
     let DOMString = {
-        tableItem: '#table-item'
+        cartItem: '#table-item'
     }
 
     return {
@@ -163,7 +190,7 @@ var UIController = (function () {
         addListItem: function (obj) {
             let html, newHtml, element;
             //create an html string with placehode text 
-            element = DOMString.tableItem;
+            element = DOMString.cartItem;
             html = '<tr><th class="align-middle "scope="row "><button class="btn-sm btn-danger fa fa-trash ">  Remove</button></th><td class="align-middle">%title%  <br/>%description%</td><td class="align-middle">%price%</td><td class="align-middle">%quantity%</td><td class="align-middle">Total </td></tr>';
             //replace the placeolder text with with the actual data
             newHtml = html.replace('%title%', obj.title);
@@ -190,25 +217,26 @@ var UIController = (function () {
 //Global App Controller
 var controller = (function (courseCtrl, UICtrl) {
 
+    let DOM = UICtrl.getDOMString();
     let btnEnquiry = document.querySelectorAll('.btn-enquery');
     var cart = document.getElementById('cart');
     let shoopingCart = document.getElementById('shop-cart');
+    let cartItem = document.querySelector(DOM.cartItem);
 
     var setupEventListener = function () {
+       
+        if(cartItem){
+            document.querySelector(DOM.cartItem).addEventListener('click', ctrlDeleteItem);
 
-
+        }
         //show  shopping cart on mousehover
         cart.addEventListener('mouseover', function (event) {
             event.preventDefault();
 
             if (shoopingCart.style.display === 'none') {
-
                 shoopingCart.style.display = 'block';
-
             } else {
-
                 shoopingCart.style.display = 'none';
-
             }
 
         });
@@ -233,7 +261,7 @@ var controller = (function (courseCtrl, UICtrl) {
             for (let item = 0; item < btnEnquiry.length; item++) {
 
                 btnEnquiry[item].addEventListener('click', function () {
-
+                console.log('you have clicked add course btn');
                     let cartItems = localStorage.getItem('cartItems');
                     let data = courseCtrl.getData();
 
@@ -273,11 +301,31 @@ var controller = (function (courseCtrl, UICtrl) {
 
         addItemToCart();
     }
+    
+    var ctrlDeleteItem = function(event){
+
+        let itemID, splitID, id;
+
+        itemID = event.target.parentNode.parentNode.id;
+        
+        if(itemID){
+            console.log("the id found is ", itemID);
+            splitID = itemID.split('-');
+            id = parseInt(splitID[3]);
+            console.log("the id found is ", id);
+
+            //delete from data structure
+            courseCtrl.deleteItemFromCart(id);
+            //delete from the UI
+
+            //update the UI
+        }
+        
+    };
 
     function onloadPopulateCartList() {
 
         let html, newHtml, cartList, cartData, msg;
-        //create an html string with placehode text 
         cartList = '#table-item';
         msg = "#no-data-msg"
         cartData = localStorage.getItem('cartData');
@@ -289,9 +337,7 @@ var controller = (function (courseCtrl, UICtrl) {
             //loop througth the cart object and display it on the cart page
             for (item = 0; item < cartData.length; item++) {
 
-                // let field = cartData.map(({ title }) => title);
-                // console.log(field);     
-                html = '<tr><th class="align-middle "scope="row "><button class="btn-sm btn-danger fa fa-trash ">  Remove</button></th><td class="align-middle">%title%  <br/>%description%</td><td class="align-middle">%price%</td><td class="align-middle">%quantity%</td><td class="align-middle">Total </td></tr>';
+                html = '<tr id="cart-list-item-%id%"><th class="align-middle "scope="row "><button class="btn-sm btn-danger fa fa-trash ">  Remove</button></th><td class="align-middle">%title%  <br/>%description%</td><td class="align-middle">%price%</td><td class="align-middle">%quantity%</td><td class="align-middle">Total </td></tr>';
                 //replace the placeolder text with with the actual data
                 newHtml = html;
                 newHtml = newHtml.replace('%id%', cartData[item].id);
@@ -301,16 +347,12 @@ var controller = (function (courseCtrl, UICtrl) {
                 newHtml = newHtml.replace('%price%', cartData[item].price);
                 //insert the html in the UI
                 document.querySelector(cartList).insertAdjacentHTML("beforeend", newHtml);
-
             }
 
         } else {
-
+            //display no data msg
             html = '<div class="text-center"><h4>You have not added anything to Cart</h4></div>'
-            //console.log("There is nothing in the shopping Cart");
             document.querySelector(msg).insertAdjacentHTML("beforeend", html);
-
-
         }
 
     }
