@@ -241,12 +241,8 @@ var controller = (function (courseCtrl, UICtrl) {
         if(cartItem){
             document.querySelector(DOM.cartItem).addEventListener('click', ctrlDeleteItem);
         }
-        if(cartPage){
-            cartPage.addEventListener('click', onloadPopulateCartList)
-            console.log('you are on the cart Page');
-        }
-        
-        cartIcon.addEventListener('mouseover', showCartOnHover );      
+
+        cartIcon.addEventListener('mouseover', showCartOnHover );     
 
         ctrlAddItemToCart();
         
@@ -331,12 +327,13 @@ var controller = (function (courseCtrl, UICtrl) {
 
     function onloadPopulateCartList() {
 
-        let html, newHtml, cartData;
-       
+        let html, newHtml, cartData, cartList;
+     
         cartData = localStorage.getItem('cartData');
         cartData = JSON.parse(cartData);
+        cartList = document.querySelector(DOM.cartListItems);
 
-        if (cartData) {
+        if (cartData && cartList !== null) {
             //loop througth the cart object and display it on the cart page
             for (item = 0; item < cartData.length; item ++) {
 
@@ -352,11 +349,12 @@ var controller = (function (courseCtrl, UICtrl) {
                 document.querySelector(DOM.cartListItems).insertAdjacentHTML("beforeend", newHtml);
             }
 
-        } else {
+        } else if(!cartData && cartList !==null) {
             //display no data msg
             html = '<div class="text-center"><h4>You have not added anything to Cart</h4></div>'
             document.querySelector(DOM.msg).insertAdjacentHTML("beforeend", html);
         }
+        console.log(cartData.length);
 
     }
 
@@ -374,7 +372,7 @@ var controller = (function (courseCtrl, UICtrl) {
             console.log("Application has started");
             setupEventListener();
             OnloadCartItems();
-            //onloadPopulateCartList();
+            onloadPopulateCartList();
         }
     }
 
