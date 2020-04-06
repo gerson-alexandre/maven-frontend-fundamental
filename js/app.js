@@ -181,11 +181,15 @@ var courseController = (function () {
 var UIController = (function () {
 
     let DOMString = {
+        cartIcon: 'cart',
+        cartHover: 'shop-cart',
         cartItem: '#table-item',
         cartListItems: '#table-item',
         msg: "#no-data-msg",
+        btnEnquiry: '.btn-enquery',
+        cartPage: 'cart-page',
     }
-
+    
     return {
 
         //testing insert adjacent html
@@ -226,88 +230,85 @@ var UIController = (function () {
 var controller = (function (courseCtrl, UICtrl) {
 
     let DOM = UICtrl.getDOMString();
-    let btnEnquiry = document.querySelectorAll('.btn-enquery');
-    var cart = document.getElementById('cart');
-    let shoopingCart = document.getElementById('shop-cart');
+    var cartIcon = document.getElementById(DOM.cartIcon);
+    let shoopingCart = document.getElementById(DOM.cartHover);
     let cartItem = document.querySelector(DOM.cartItem);
+    let btnEnquiry =document.querySelectorAll(DOM.btnEnquiry);
+    let cartPage  = document.getElementById(DOM.cartPage);
 
     var setupEventListener = function () {
        
         if(cartItem){
             document.querySelector(DOM.cartItem).addEventListener('click', ctrlDeleteItem);
-
         }
-        //show  shopping cart on mousehover
-        cart.addEventListener('mouseover', function (event) {
-            event.preventDefault();
+        if(cartPage){
+            cartPage.addEventListener('click', onloadPopulateCartList)
+            console.log('you are on the cart Page');
+        }
+        
+        cartIcon.addEventListener('mouseover', showCartOnHover );      
 
-            if (shoopingCart.style.display === 'none') {
-                shoopingCart.style.display = 'block';
-            } else {
-                shoopingCart.style.display = 'none';
-            }
+        ctrlAddItemToCart();
+        
+    }
 
-        });
+    var showCartOnHover = function(event){
 
-        //Calcualate the total Cost of the items in the cart                     
-        function totalCartCost(cartItem) {
+        if (shoopingCart.style.display === 'none') {
+            shoopingCart.style.display = 'block';
+        } else {
+            shoopingCart.style.display = 'none';
+        }
 
-            let totalCost = localStorage.getItem('totalCost');
+    }
+    
+    var ctrlAddItemToCart = function(){
+        var newCartItem;
+           
+        for (let item = 0; item < btnEnquiry.length; item ++) {
 
-            if (totalCost != null) {
-                totalCost = parseInt(totalCost);
+            btnEnquiry[item].addEventListener('click', function () {
+                let cartItems = localStorage.getItem('cartItems');
+                let data = courseCtrl.getData();
 
-            } else {
+                cartItems = parseInt(cartItems);
 
-            }
-        };
+                if (cartItems) {
 
-        function addItemToCart() {
-
-            var newCArtItem;
-            //loop to get the the index of the clicked button
-            for (let item = 0; item < btnEnquiry.length; item++) {
-
-                btnEnquiry[item].addEventListener('click', function () {
-                console.log('you have clicked add course btn');
-                    let cartItems = localStorage.getItem('cartItems');
-                    let data = courseCtrl.getData();
-
-                    cartItems = parseInt(cartItems);
-
-                    if (cartItems) {
-
-                        localStorage.setItem('cartItems', cartItems + 1);
-                        document.querySelector('.nav-item span').textContent = cartItems + 1;
-                        totalCartCost(newCArtItem);
-                        //check if the course item has already been added to cart 
-                        if (data.allItem.shoppingCart[item]) {
-
-                            courseCtrl.addToItemQuantity(item);
-
-                        } else {
-                            //add the item  to cart for the first time and set the qantity to be 1
-                            newCArtItem = courseCtrl.addToCart(data.allItem.course[item].id, data.allItem.course[item].title, data.allItem.course[item].description, data.allItem.course[item].price, data.allItem.course[item].img, 1);
-                            totalCartCost(newCArtItem);
-                            //UICtrl.addListItem(newCArtItem);
-                        }
-
+                    localStorage.setItem('cartItems', cartItems + 1);
+                    document.querySelector('.nav-item span').textContent = cartItems + 1;
+                    totalCartCost(newCartItem);
+                    //check if the course item has already been added to cart 
+                    if (data.allItem.shoppingCart[item]) {
+                        courseCtrl.addToItemQuantity(item);
                     } else {
-
-                        localStorage.setItem('cartItems', 1);
-                        document.querySelector('.nav-item span').textContent = 1;
-                        newCArtItem = courseCtrl.addToCart(data.allItem.course[item].id, data.allItem.course[item].title, data.allItem.course[item].description, data.allItem.course[item].price, data.allItem.course[item].img, 1);
-                        totalCartCost(newCArtItem);
-                     
+                        //add the item  to cart for the first time and set the qantity to be 1
+                        newCartItem = courseCtrl.addToCart(data.allItem.course[item].id, data.allItem.course[item].title, data.allItem.course[item].description, data.allItem.course[item].price, data.allItem.course[item].img, 1);
+                        totalCartCost(newCartItem);
                     }
 
-                });
+                } else {
 
-            }
-        };
+                    localStorage.setItem('cartItems', 1);
+                    document.querySelector('.nav-item span').textContent = 1;
+                    newCArtItem = courseCtrl.addToCart(data.allItem.course[item].id, data.allItem.course[item].title, data.allItem.course[item].description, data.allItem.course[item].price, data.allItem.course[item].img, 1);
+                    totalCartCost(newCartItem);                    
+                }
 
-        addItemToCart();
-    }
+            });
+
+        }
+    };
+
+    function totalCartCost(cartItem) {
+
+        let totalCost = localStorage.getItem('totalCost');
+
+        if (totalCost != null) {
+            totalCost = parseInt(totalCost);
+
+        } 
+    };
     
     var ctrlDeleteItem = function(event){
 
@@ -373,7 +374,7 @@ var controller = (function (courseCtrl, UICtrl) {
             console.log("Application has started");
             setupEventListener();
             OnloadCartItems();
-            onloadPopulateCartList();
+            //onloadPopulateCartList();
         }
     }
 
