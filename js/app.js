@@ -354,7 +354,7 @@ var controller = (function (courseCtrl, UICtrl) {
             html = '<div class="text-center"><h4>You have not added anything to Cart</h4></div>'
             document.querySelector(DOM.msg).insertAdjacentHTML("beforeend", html);
         }
-        console.log(cartData.length);
+        
 
     }
 
