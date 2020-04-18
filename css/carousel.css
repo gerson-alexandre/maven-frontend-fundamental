@@ -1,4 +1,44 @@
 
+
+/* courses carousel style start */
+
+/***********************************************************************************************************************/
+#owl-courses .item{
+    margin: 30px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.customNavigation{
+    text-align: center;
+}
+
+.customNavigation a{
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.custom-owl-navigation {
+    margin: 50px;
+}
+/* courses carousel style end */
+
+/***********************************************************************************************************************/
+
+
+
+
+
+
+
+
+/***********************************************************************************************************************/
+/* Compnies logo Carousel start */
 @media (min-width: 768px) and (max-width: 991px) {
     /* Show 4th slide on md if col-md-4*/
     .carousel-inner .active.col-md-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
@@ -128,6 +168,8 @@
     } 
 }
 
+/***********************************************************************************************************************/
+/* Compnies logo Carousel end */
 
 .f-semibold {
     font-weight: 600;
