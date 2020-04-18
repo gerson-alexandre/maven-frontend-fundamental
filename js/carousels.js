@@ -59,6 +59,14 @@ $(document).ready(function() {
             }
         }
     })
+    
+    //Next testimony navegatiom  
+    $('.next-testimony').click(function() {
+        testimonialCarousel.trigger('next.owl.carousel');
+
+    });
+     //Testimonial owl carousel end
+    //********************************************************************************* 
 
    
 });
