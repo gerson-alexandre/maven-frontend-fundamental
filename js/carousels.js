@@ -30,41 +30,7 @@ $(document).ready(function() {
     //courses owl carousel end
     //*********************************************************************************
 
-    //Testimonial owl carousel start
-    var testimonialCarousel = $('.testimonial-carousel');
-    
-    $('.testimonial-carousel').owlCarousel({
-        loop:true,
-        margin:10,
-        responsiveClass:true,
-        items:1,
-        center: true,
-        stahge: 0,
-        dots:false,
-        autoplay:true,
-        autoplayTimeout:8000,
-        autoplaySpeed:800,
-        autoplayHouverPause:true,
-        nav:false,
-        responsive:{
-            0:{
-                items:1
-            },
-            500:{
-                items:1
-            },
-            1000:{
-                items:1
-            }
-        }
-    })
-    //Next testimony navegatiom  
-    $('.next-testimony').click(function() {
-        testimonialCarousel.trigger('next.owl.carousel');
-
-    });
-     //Testimonial owl carousel end
-    //********************************************************************************* 
+   
 });
 //Testimonial owl carousel end
 
