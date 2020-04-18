@@ -137,7 +137,7 @@ var courseController = (function () {
             return newItem;
         },
 
-        //Delete data from the
+        //Delete data from cart
         deleteItemFromCart: function(id){
 
             let ids, index, cartData;

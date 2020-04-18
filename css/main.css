@@ -4,21 +4,13 @@ body {
     margin: 0;
     font-family: 'Titillium Web', sans-serif;
 }
-
+/* main Navbar */
 nav {
     position: fixed;
     width: 100%;
     height: 4em;
     background-color: #36414c;
     box-shadow: inset 0 -1px 0 0;
-}
-
-.home-main-heading {
-    text-align: center;
-    background-color: #EAF2F8;
-    width: 100%;
-    height: 125vh;
-    margin-bottom: 80px;
 }
 
 nav .navbar-nav li a {
@@ -28,6 +20,14 @@ nav .navbar-nav li a {
 nav .navbar-nav li a:hover {
     color: #5b9de3 !important;
     border-bottom: 2px solid #5b9de3;
+}
+
+.home-main-heading {
+    text-align: center;
+    background-color: #EAF2F8;
+    width: 100%;
+    height: 125vh;
+    margin-bottom: 80px;
 }
 
 .align-center {
@@ -53,7 +53,12 @@ nav .navbar-nav li a:hover {
     background-color: #fff;
     color: #5b9de3;
 }
-
+/* course section style */
+.courses-wrapper{
+    /* margin-left: 40px!important;
+    margin-right: 40px !important; */
+}
+/* courses section style end */
 .btn-enquery {
     width: 250px;
     height: 40px;
@@ -61,7 +66,9 @@ nav .navbar-nav li a:hover {
     border: solid 2px #60a0e3;
     margin-top: 20px;
 }
-
+.review-title {
+    padding-top: 110px;
+}
 .btn-enquery:hover {
     background-color: #fff;
     color: #5b9de3;
@@ -156,9 +163,8 @@ nav .navbar-nav li a:hover {
 
 .students-review {
     background-color: #36414c;
-    ;
     width: 100%;
-    height: 673px;
+    height: 610px;
     text-align: center;
 }
 
@@ -260,7 +266,7 @@ footer h6 {
     }
 }
 
-/* styling cart */
+/* cart side bar style start */
 /* /https://codepen.io/drehimself/pen/VvYLmV */
 *,
 *:before,
@@ -364,7 +370,6 @@ footer h6 {
     float: left;
 }
 
-
 .clearfix:after {
     content: "";
     display: table;
@@ -386,3 +391,4 @@ footer h6 {
     transform: translate(0px, -4px);
 
 }
+
