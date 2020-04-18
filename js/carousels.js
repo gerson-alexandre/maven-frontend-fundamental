@@ -19,6 +19,7 @@ $(document).ready(function() {
         autoplayTimeout:8000,
         autoplaySpeed:800,
         autoplayHouverPause:true,
+        dots:false,
         padding:40
 
     });
