@@ -35,6 +35,7 @@ nav .navbar-nav li a:hover {
     margin-bottom: 80px;
 }
 
+
 .home-main-heading h1 {
     padding-top: 50px;
 }
@@ -73,22 +74,6 @@ nav .navbar-nav li a:hover {
     }
 }
 /* main section (main heading) style end */
-
-
-/*home page courses section style start */
-.btn-enquery {
-    width: 250px;
-    height: 40px;
-    border-radius: 22.5px;
-    border: solid 2px #60a0e3;
-    margin-top: 20px;
-}
-
-.btn-enquery:hover {
-    background-color: #fff;
-    color: #5b9de3;
-}
-/*home page courses section style end */
 
 
 /* section why maven academy style start */
@@ -143,12 +128,24 @@ nav .navbar-nav li a:hover {
 }
 
 .course-panel {
-    /* margin: 40px; */
     width: 372px;
     height: 589px;
     box-shadow: 0 5px 20px 0 rgba(25, 71, 128, 0.2);
     background-color: #ffffff;
     transition: transform 1s;
+}
+
+.btn-enquery {
+    width: 250px;
+    height: 40px;
+    border-radius: 22.5px;
+    border: solid 2px #60a0e3;
+    margin-top: 20px;
+}
+
+.btn-enquery:hover {
+    background-color: #fff;
+    color: #5b9de3;
 }
 /* section our courses - home style end */
 
@@ -183,7 +180,7 @@ nav .navbar-nav li a:hover {
 }
 
 /* section student testimonial style start*/
-.students-review {
+.testimonial-section{
     background-color: #36414c;
     width: 100%;
     height: 610px;
