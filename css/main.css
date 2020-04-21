@@ -6,6 +6,7 @@ body {
     font-family: 'Titillium Web', sans-serif;
 }
 
+/* main navbar style start*/
 nav {
     position: fixed;
     width: 100%;
@@ -57,7 +58,15 @@ nav .navbar-nav li a:hover {
     text-align: center;
 }
 
-/* typewriter style */
+/* typewriter*/
+#typewriter-wrap {
+    border-right: .05em solid;
+    animation: caret 1s steps(1) infinite;
+
+    background-color: springgreen;
+}
+
+/* typewriter animation */
 @keyframes caret {
     50% {
         border-color: transparent;
@@ -134,9 +143,9 @@ nav .navbar-nav li a:hover {
 }
 
 .course-panel {
-    margin: 40px;
+    /* margin: 40px; */
     width: 372px;
-    height: 489px;
+    height: 589px;
     box-shadow: 0 5px 20px 0 rgba(25, 71, 128, 0.2);
     background-color: #ffffff;
     transition: transform 1s;
@@ -251,6 +260,8 @@ footer h6 {
     font-size: 12px !important;
 }
 /* footer end */
+
+
 
 /* shopping cart style start. the  style below  is for the cart that show when the mouse is over the cart icon in navbar  */
 /* /https://codepen.io/drehimself/pen/VvYLmV */
@@ -379,7 +390,7 @@ footer h6 {
 /*cart page style start */
 
 
-/* media implementing  querires */
+/* Mdia Queries implementing */
 @media all and (max-width:400px) {}
 
 @media (max-width: 767px) {
