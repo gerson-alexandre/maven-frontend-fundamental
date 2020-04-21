@@ -15,6 +15,7 @@ $(document).ready(function() {
         }
     },
         navigation : true,
+        loop:true,
         autoplay:true,
         autoplayTimeout:8000,
         autoplaySpeed:800,
@@ -40,7 +41,6 @@ $(document).ready(function() {
         responsiveClass:true,
         items:1,
         center: true,
-        stahge: 0,
         dots:false,
         autoplay:true,
         autoplayTimeout:8000,
@@ -59,7 +59,7 @@ $(document).ready(function() {
             }
         }
     })
-    
+
     //Next testimony navegatiom  
     $('.next-testimony').click(function() {
         testimonialCarousel.trigger('next.owl.carousel');
