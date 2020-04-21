@@ -1,10 +1,12 @@
+/* importing google fonts */
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
 
 body {
     margin: 0;
     font-family: 'Titillium Web', sans-serif;
 }
-/* main Navbar */
+
+/* main Navbar style start */
 nav {
     position: fixed;
     width: 100%;
@@ -21,17 +23,16 @@ nav .navbar-nav li a:hover {
     color: #5b9de3 !important;
     border-bottom: 2px solid #5b9de3;
 }
+/* main navbar style end */
 
+
+/* main section (main heading style start */
 .home-main-heading {
     text-align: center;
     background-color: #EAF2F8;
     width: 100%;
     height: 125vh;
     margin-bottom: 80px;
-}
-
-.align-center {
-    text-align: center;
 }
 
 .home-main-heading h1 {
@@ -43,7 +44,6 @@ nav .navbar-nav li a:hover {
     height: 60px;
     border-radius: 30px;
     padding: 1px 4px 1px 4px;
-    /* box-shadow: 0 10px 20px 0 rgba(25, 71, 128, 0.2); */
     background-color: #5b9de3;
     border-color: #5b9de3;
     color: #fff;
@@ -53,12 +53,21 @@ nav .navbar-nav li a:hover {
     background-color: #fff;
     color: #5b9de3;
 }
-/* course section style */
-.courses-wrapper{
-    /* margin-left: 40px!important;
-    margin-right: 40px !important; */
+
+.align-center {
+    text-align: center;
 }
-/* courses section style end */
+
+/* typewriter style */
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+}
+/* main section (main heading) style end */
+
+
+/*home page courses section style start */
 .btn-enquery {
     width: 250px;
     height: 40px;
@@ -66,15 +75,15 @@ nav .navbar-nav li a:hover {
     border: solid 2px #60a0e3;
     margin-top: 20px;
 }
-.review-title {
-    padding-top: 110px;
-}
+
 .btn-enquery:hover {
     background-color: #fff;
     color: #5b9de3;
 }
+/*home page courses section style end */
 
 
+/* section why maven academy style start */
 .why-maven-academy {
     display: flex;
 }
@@ -85,7 +94,6 @@ nav .navbar-nav li a:hover {
     border-radius: 5px;
     box-shadow: 0 15px 30px 0 rgba(25, 71, 128, 0.2);
     background-color: #ffffff;
-
 }
 
 .box-2 {
@@ -110,7 +118,33 @@ nav .navbar-nav li a:hover {
     font-size: 12px;
     border-radius: 30px;
 }
+/* section why maven academy style  end */
 
+
+/* section our courses style start */
+.our-courses {
+    margin-top: 80px;
+    background-color: #EAF2F8;
+    width: 100%;
+    height: 808px;
+    text-align: center;
+}
+
+.our-courses h1 {
+    padding-top: 50px;
+}
+
+.course-panel {
+    margin: 40px;
+    width: 372px;
+    height: 489px;
+    box-shadow: 0 5px 20px 0 rgba(25, 71, 128, 0.2);
+    background-color: #ffffff;
+    transition: transform 1s;
+}
+/* section our courses - home style end */
+
+/* buttons */
 .btn-circular-md {
     padding-left: 40px;
     padding-right: 40px;
@@ -134,33 +168,13 @@ nav .navbar-nav li a:hover {
     background-color: #fff;
     color: #5b9de3;
 }
-
-.our-courses {
-    margin-top: 80px;
-    background-color: #EAF2F8;
-    width: 100%;
-    /* height: 110vh; */
-    height: 808px;
-    text-align: center;
-}
-
-.our-courses h1 {
-    padding-top: 50px;
-}
-
-.course-panel {
-    margin: 40px;
-    width: 372px;
-    height: 489px;
-    box-shadow: 0 5px 20px 0 rgba(25, 71, 128, 0.2);
-    background-color: #ffffff;
-    transition: transform 1s;
-}
+/* buttons end*/
 
 .course-panel:hover {
     transform: translate(0px, -8px);
 }
 
+/* section student testimonial style start*/
 .students-review {
     background-color: #36414c;
     width: 100%;
@@ -168,6 +182,14 @@ nav .navbar-nav li a:hover {
     text-align: center;
 }
 
+.review-title {
+    padding-top: 110px;
+}
+/* section student testimonial style end*/
+
+
+
+/* section footer start */
 .footer-content {
     width: 100%;
     height: 30vh;
@@ -200,13 +222,7 @@ footer h6 {
     color: #4a90e2;
 }
 
-.icon-box {
-    width: 75px;
-    height: 75px;
-    background-color: #5b9de3;
-    margin-right: 20px;
-    border-radius: 15px;
-}
+
 
 .bg-light-blue {
     background-color: rgba(91, 157, 227, 0.08);
@@ -220,27 +236,12 @@ footer h6 {
     background-color: #fff;
     box-shadow: inset 0 opx 0 0;
     margin-bottom: 30px;
-
-
 }
 
 .bg-breadcrumb {
     background-color: #fff !important;
 }
 
-/* typewriter style */
-#typewriter-wrap {
-    border-right: .05em solid;
-    animation: caret 1s steps(1) infinite;
-
-    background-color: springgreen;
-}
-
-@keyframes caret {
-    50% {
-        border-color: transparent;
-    }
-}
 
 .text-size {
     font-size: 3rem;
@@ -250,23 +251,9 @@ footer h6 {
 .f-footer {
     font-size: 12px !important;
 }
+/* footer end */
 
-/* implementing media querires */
-@media all and (max-width:400px) {}
-
-@media (max-width: 767px) {
-    .text-size {
-        font-size: 38px;
-    }
-}
-
-@media (max-width: 767px) {
-    .text-size {
-        font-size: 38px;
-    }
-}
-
-/* cart side bar style start */
+/* shopping cart style start. the  style below  is for the cart that show when the mouse is over the cart icon in navbar  */
 /* /https://codepen.io/drehimself/pen/VvYLmV */
 *,
 *:before,
@@ -379,16 +366,31 @@ footer h6 {
 #shop-cart {
     font-display: none;
 }
+/* shopping cart style end. The  style above  is for the cart that show when the mouse is over the cart icon in navbar  */
 
-/* end of cart style */
 
+/* cart page style start */
 .fa-trash {
-    /* color: red; */
-    
     transition: transform 500ms;
 }
+
 .fa-trash:hover {
     transform: translate(0px, -4px);
+} 
+/*cart page style start */
 
+
+/* media implementing  querires */
+@media all and (max-width:400px) {}
+
+@media (max-width: 767px) {
+    .text-size {
+        font-size: 38px;
+    }
 }
 
+@media (max-width: 767px) {
+    .text-size {
+        font-size: 38px;
+    }
+}
