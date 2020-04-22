@@ -23,10 +23,11 @@ nav .navbar-nav li a:hover {
     color: #5b9de3 !important;
     border-bottom: 2px solid #5b9de3;
 }
-
-.navbar-toggler-icon {
-    color:white !important;
+/* change bootstrap navbar toggle icon */
+.navbar-dark .navbar-toggler-icon{
+    background-image: url("/images/white-bars.svg")!important; 
 }
+
 /* main navbar style end */
 
 
@@ -386,7 +387,7 @@ footer h6 {
 #shop-cart {
     font-display: none;
 }
-/* shopping cart style end. The  style above  is for the cart that show when the mouse is over the cart icon in navbar  */
+/* shopping cart style end. The  style above  is for the side bar cart that show when the mouse is over the cart icon in navbar  */
 
 
 /* cart page style start */
@@ -416,10 +417,17 @@ footer h6 {
 }
 
 
-@media (max-width: 990px) {
+@media (max-width: 991px) {
     .navbar-collapse
       {
           background-color:#5b9de3;
           text-align: center;
       }
+
+      nav .navbar-nav li a:hover {
+        /* color: #5b9de3 !important;
+        border-bottom: 2px solid #5b9de3; */
+        
+        border-bottom: 2px rgba(163, 163, 17, 0.924);
+    }
   }
