@@ -27,6 +27,11 @@ nav .navbar-nav li a:hover {
 .navbar-dark .navbar-toggler-icon{
     background-image: url("/images/white-bars.svg")!important; 
 }
+.navbar-custom .navbar-toggler-icon{
+    /* background-image: url("/images/white-bars.svg")!important; */ 
+    background-image: url("/images/redbar.svg")!important; 
+}
+
 
 /* main navbar style end */
 
@@ -51,12 +56,14 @@ nav .navbar-nav li a:hover {
     border-radius: 30px;
     padding: 1px 4px 1px 4px;
     background-color: #5b9de3;
-    border-color: #5b9de3;
+    border-style: solid;
+    box-shadow: #5b9de3;
     color: #fff;
 }
 
 .btn-find-out-more:hover {
     background-color: #fff;
+    border-color: #5b9de3; 
     color: #5b9de3;
 }
 

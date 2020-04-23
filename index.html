@@ -20,9 +20,9 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
                 <a class="navbar-brand pl-5" href="/">
-                    <img src="./images/maven_academy.png" width="113" height="44" alt="">
+                    <img src="./images/maven_academy.png" width="113" height="44" alt="logo">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                <button id="btn-nav-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                     aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -489,8 +489,15 @@
             }
         });
 
+        //toggle the image in the back ground
+        $('#btn-nav-toggler').click(function() {
+            console.log('You clicked toggle button');
+        //document.getElementById
+            $( "button.navbar-toggler" ).children().css( "background-image", "/images/white-bars.svg");
+        });
     </script>
     <!-- carousel script -->
+
 
 
 </body>
