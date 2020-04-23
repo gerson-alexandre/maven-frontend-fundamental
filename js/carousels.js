@@ -7,10 +7,10 @@ $(document).ready(function() {
         0:{
             items:1
         },
-        600:{
+        678:{
             items:2
         },
-        1000:{
+        991:{
             items:3
         }
     },
@@ -21,6 +21,8 @@ $(document).ready(function() {
         autoplaySpeed:800,
         autoplayHouverPause:true,
         dots:false,
+        autoWidth:false,
+        animateIn: true,
         padding:40
 
     });

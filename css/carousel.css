@@ -20,12 +20,12 @@
 }
 
 .custom-owl-navigation {
-    margin: 50px;
+    margin-left: 35px!important;
 }
 /* courses carousel style end */
 
 /***********************************************************************************************************************/
-/* Compnies logo Carousel start */
+/* Companies logo Carousel start */
 @media (min-width: 768px) and (max-width: 991px) {
     /* Show 4th slide on md if col-md-4*/
     .carousel-inner .active.col-md-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
