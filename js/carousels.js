@@ -24,7 +24,7 @@ $(document).ready(function() {
         padding:40
 
     });
-
+    
     //Next course naviagation 
     $('.next-course').click(function() {
         coursesCarousel.trigger('next.owl.carousel');
