@@ -48,6 +48,7 @@ $(document).ready(function() {
         autoplayTimeout:8000,
         autoplaySpeed:800,
         autoplayHouverPause:true,
+        autoWidth:false,
         nav:false,
         responsive:{
             0:{
