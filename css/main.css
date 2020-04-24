@@ -232,6 +232,17 @@ footer {
     text-align: center;
     color: #ffffff;
 }
+/*copyright bg color*/
+.bottom-footer {
+    background-color: #17202A;
+}
+.page-footer{
+
+}
+.footer-copyright {
+    width: 100%!important;
+    height: 20vh!important;
+}
 
 .mask {
     width: 100%;
@@ -248,6 +259,10 @@ footer {
 
 footer h6 {
     color: #4a90e2;
+}
+
+footer ul li {
+    padding-bottom: 15px;
 }
 
 
@@ -407,15 +422,18 @@ footer h6 {
 .fa-trash:hover {
     transform: translate(0px, -4px);
 } 
-/*cart page style start */
+/*cart page style end */
 
 
-/* Mdia Queries implementing */
+/* Media Queries implementation */
 @media all and (max-width:400px) {}
 
 @media (max-width: 767px) {
     .text-size {
         font-size: 38px;
+    }
+    footer {
+        height: 165vh;
     }
 }
 
@@ -437,6 +455,7 @@ footer h6 {
     .footer-content {
         height: 75vh;
     }
+  
 }
 
 @media (max-width: 592px) {
@@ -450,6 +469,5 @@ footer h6 {
     .footer-content {
         height: 115vh;
     }
+   
 }
-
-/* testststststtsttsttststtt */
