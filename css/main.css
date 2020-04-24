@@ -424,7 +424,7 @@ footer ul li {
 } 
 /*cart page style end */
 
-
+/* ************************************************************************************************************************* */
 /* Media Queries implementation */
 @media all and (max-width:400px) {}
 
@@ -452,9 +452,9 @@ footer ul li {
         height: 135vh;
     }
 
-    .footer-content {
+    /* .footer-content {
         height: 75vh;
-    }
+    } */
   
 }
 
@@ -466,8 +466,8 @@ footer ul li {
     .home-main-heading {
         height: 120vh;
     }
-    .footer-content {
+    /* .footer-content {
         height: 115vh;
-    }
+    } */
    
 }
