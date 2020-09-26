@@ -324,6 +324,37 @@ var controller = (function (courseCtrl, UICtrl) {
         }
         
     };
+    
+    //Cart side bar ovelay function
+    function populateCartSideBar(){
+        let html, newHtml, cartData, cartList;
+     
+        cartData = localStorage.getItem('cartData');
+        cartData = JSON.parse(cartData);
+        cartList = document.querySelector(DOM.cartListItems);
+
+        if (cartData && cartList !== null) {
+            //loop through the cart object and display it on the cart page
+            for (item = 0; item < cartData.length; item ++) {
+
+                html = ''
+                   //replace the placeholder text with with the actual data
+                newHtml = html;
+                newHtml = newHtml.replace('%id%', cartData[item].id);
+                newHtml = newHtml.replace('%title%', cartData[item].title);
+                newHtml = newHtml.replace('%description%', cartData[item].description);
+                newHtml = newHtml.replace('%quantity%', cartData[item].quantity);
+                newHtml = newHtml.replace('%price%', cartData[item].price);
+                //insert the html in the UI
+                document.querySelector(DOM.cartListItems).insertAdjacentHTML("beforeend", newHtml);
+            }
+
+        } else if(!cartData && cartList !==null) {
+            //display no data msg
+            html = '<div class="text-center"><h4>You have not added anything to Cart</h4></div>'
+            document.querySelector(DOM.msg).insertAdjacentHTML("beforeend", html);
+        }
+    }
 
     function onloadPopulateCartList() {
 
@@ -334,11 +365,11 @@ var controller = (function (courseCtrl, UICtrl) {
         cartList = document.querySelector(DOM.cartListItems);
 
         if (cartData && cartList !== null) {
-            //loop througth the cart object and display it on the cart page
+            //loop through the cart object and display it on the cart page
             for (item = 0; item < cartData.length; item ++) {
 
                 html = '<tr id="cart-list-item-%id%"><th class="align-middle "scope="row "><button class="btn-sm btn-danger fa fa-trash ">  Remove</button></th><td class="align-middle">%title%  <br/>%description%</td><td class="align-middle">%price%</td><td class="align-middle">%quantity%</td><td class="align-middle">Total </td></tr>';
-                //replace the placeolder text with with the actual data
+                //replace the placeholder text with with the actual data
                 newHtml = html;
                 newHtml = newHtml.replace('%id%', cartData[item].id);
                 newHtml = newHtml.replace('%title%', cartData[item].title);
@@ -355,7 +386,6 @@ var controller = (function (courseCtrl, UICtrl) {
             document.querySelector(DOM.msg).insertAdjacentHTML("beforeend", html);
         }
         
-
     }
 
     function OnloadCartItems() {
